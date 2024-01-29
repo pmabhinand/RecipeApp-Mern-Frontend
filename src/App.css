@@ -1,38 +1,225 @@
-.App {
-  text-align: center;
+/* Auth */
+
+.Auth{
+    background-image:url('./gallery/Auth_bg.jpg');
+    background-size: 100% 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Nav */
+#Navlogin{
+    border: 1px solid lightgray;
+    height: 3rem;
+    width: 10.5rem;
+    
+}
+#Navlogin i{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding-left: 5px;
+    padding-top: 3px;
+    color:blue;
+    background-color:skyblue;
+}
+#Navlogin:hover{
+    background-color: blue;
+    border: 1px solid blue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+
+/* Home */
+
+#welcome1{
+    width: 60%;
+    height: 100%;
+    background-image: url('./gallery/welcome.jpg');
+    background-size: 100% 100%;
+}
+#welcome2{
+    width: 50%;
+    height: 100%;
+    background-color:black;
+    color:white;
+}
+
+#parent{
+    margin-left: 55px;
+}
+#rounded{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;   
+}
+#rounded img{
+    border-radius: 50%;
+}
+#float button{
+    float: right;
+    border: none;
+    background-color: white;
+}
+
+#shopping{
+    height: 30rem;
+    background-color: darkgray;
+}
+#parentSlider{
+    width: 75%;
+    margin: auto;
+}
+#childSlider{
+    height: 20rem;
+    background-color: white;
+    border-radius: 10px;
+}
+#childSlider img{
+    width: 100%;
+    height: 14rem;
+    border-radius: 10px;
+}
+
+.slick-slide div{
+    margin: 0 10px;
+}
+
+
+
+/*myprofile */
+#Logout i{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    padding-top: 2px;
+    padding-left: 3px;
+}
+
+
+
+#userimg{
+    height: 5rem;
+    text-align: center;
+}
+#userimg img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    
+}
+
+#search input{
+    width: 30rem;
+    height: 3rem;
+    border-radius: 20px;
+    border: 1px solid gray;
+    background: transparent url('https://cdn-icons-png.freepik.com/128/54/54481.png?ga=GA1.1.1242824045.1690906162') no-repeat 13px;
+    
+    background-size: 20px 20px;
+}
+
+
+
+/*Add recipe*/
+
+#Addform input{
+    width: 20rem;
+    height: 40px;
+    border-radius: 10px;
+    margin-left: 30px;
+    text-align: center;
+    border: 1px solid gray;
+    
+}
+#Addform label{
+    font-weight: bold;
+}
+#cat{
+    margin-right: 12rem;
+    
+}
+#Addform textarea{
+    border-radius: 10px;
+    text-align: center;
+}
+#drop{
+    margin-left: 21rem;
+}  
+#drop select{
+    width: 8rem;
+    height: 35px;
+    text-align: center;
+}
+
+
+
+/*Recipes*/
+#recipes{
+    overflow-x: hidden;
+}
+#recipes h1{
+  color:darkred;
+}  
+#recipes h2{
+    color: black;
+  }   
+
+#recipeHeading{
+    font-size: 4rem;
+    background-color: beige;
+}
+
+/*Recipe card*/
+
+#Easy{
+    height: 25rem;
+    margin-right: 10px;
+}
+#Easyimg{
+    height: 16rem;
+    background-image: url("https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 20px;
+}
+#Like{
+    width: 36px;
+    height: 36px;
+    border: 1px solid skyblue;
+    margin-left: 11rem;
+    border-radius: 10px;  
+    background-color: white; 
+}
+#Like:hover{
+    border: 1px solid red;
+}
+
+
+
+
+/* Recipe details */
+#Details hr {
+    border-top: 1px dashed red;
   }
+#save{
+    width: 5rem;
+    height: 3rem;
+    border: 1px solid skyblue;
+    background-color:white;
+    border-radius: 10px;
+}  
+#save:hover{
+    border: 1px solid red;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#photo{
+    width: 60%;
+    height: 30rem;
+    margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+
