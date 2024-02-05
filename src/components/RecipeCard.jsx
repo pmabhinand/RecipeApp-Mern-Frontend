@@ -1,24 +1,28 @@
 import React from 'react'
 import '../App.css'
-import { Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-function RecipeCard() {
+function RecipeCard({recipe}) {
+
+//cutting introduction
+const intro = recipe.introduction.slice(0,100)
   return (
-    <div>
-       <Col lg={3}>
+    <>
+       
             <div id='Easy'>
             <Link to={'/recipe-details'} style={{textDecoration:'none'}}>
-               <div id='Easyimg'></div>
+               <div id='Easyimg'>
+                <img src={recipe.url} alt="" style={{width:'100%',height:'100%',borderRadius:'15px'}} />
+               </div>
                
-               <h5 className='text-center text-dark pt-3'>Pizza</h5>
-               <p className='text-dark'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cupiditate doloribus quam</p>
+               <h5 className='text-center text-dark pt-1'>{recipe.recipeName}</h5>
+               <p className='text-dark'>{intro}.....</p>
                </Link>
 
                  <div className='d-flex' id='timer'>
                    <div className='d-flex'>
                      <i class="fa-regular fa-clock text-primary"></i>
-                     <p className='ms-2 text-dark'>30 MIN</p>
+                     <p className='ms-1 text-dark'>{recipe.time}</p>
                    </div>
 
                    
@@ -32,9 +36,9 @@ function RecipeCard() {
 
                  
             </div>
-          </Col>
+          
 
-    </div>
+    </>
   )
 }
 

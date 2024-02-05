@@ -145,11 +145,7 @@
 #drop{
     margin-left: 21rem;
 }  
-#drop select{
-    width: 8rem;
-    height: 35px;
-    text-align: center;
-}
+
 
 
 
@@ -170,16 +166,12 @@
 }
 
 /*Recipe card*/
-
 #Easy{
-    height: 25rem;
-    margin-right: 10px;
+    width: 18rem;
+    height: 24rem;
 }
 #Easyimg{
     height: 16rem;
-    background-image: url("https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
     border-radius: 20px;
 }
 #Like{

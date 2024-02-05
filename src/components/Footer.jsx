@@ -1,7 +1,48 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Footer() {
+
+  //state for checking login
+  const [isLogin , setIsLogin] = useState(false)
+
+const navigate = useNavigate()
+
+useEffect(()=>{
+  if(sessionStorage.getItem("token")){
+    setIsLogin(true)
+  }
+},[])
+
+//function for moving into recipes page
+const MoveTORecipes = ()=>{
+  if(isLogin===true){
+    navigate('/recipes')
+  }
+  else{
+    toast.warning('Please Log In')
+    setTimeout(()=>{
+      navigate('/login')
+    },2000)
+  }
+}
+
+//function for moving into Myprofile page
+const MoveToMyprofile = ()=>{
+  if(isLogin===true){
+    navigate('/myprofile')
+  }
+  else{
+    toast.warning('Please Log In')
+    setTimeout(()=>{
+      navigate('/login')
+    },2000)
+  }
+}
+
   return (
     <>
       <div className='row d-flex justify-content-center align-items-center bg-dark' style={{height:'180px',overflowX:'hidden'}}>
@@ -18,8 +59,8 @@ function Footer() {
 
           <div className='col-lg-2 flex-column ps-5 text-center'>
              <div><Link to={'/'}>Home</Link></div>
-             <div><Link to={'/recipes'}>Recipes</Link></div>
-             <div><Link to={'/myprofile'}>My Profile</Link></div>
+             <div><button onClick={MoveTORecipes} type='button' className='text-primary' style={{textDecoration:'underline',border:'transparent',backgroundColor:'transparent'}}>Recipes</button></div>
+             <div><button onClick={MoveToMyprofile} type='button' className='text-primary' style={{textDecoration:'underline',border:'transparent',backgroundColor:'transparent'}}>My Profile</button></div>
              <div><Link to={'/shopping'}>Shopping</Link></div>
           </div>
           
@@ -33,7 +74,8 @@ function Footer() {
 
 
       </div>
-    
+
+      <ToastContainer position='top-center' theme='colored' autoClose={2000} />
     
     </>
   )

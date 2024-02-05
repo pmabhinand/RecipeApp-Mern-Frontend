@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import '../App.css'
 import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
-import { registerAPI } from '../Help/allAPI';
+import { loginAPI, registerAPI } from '../Help/allAPI';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Auth({register}) {
@@ -27,22 +29,60 @@ function Auth({register}) {
        console.log(result);
 
        if(result.status===200){
-        alert('Thank you...,Registration successfull')
+        toast.success('Thank you...,Registration successfull')
         setUserDetails({
           username:"",
           email:"",
           password:""
         })
-         navigate('/login')
+        setTimeout(()=>{
+          navigate('/login')
+        },2000)
+         
        }
        else{
-         alert(`${result.response.data}`)
+         toast.error(`${result.response.data}`)
        }
     }
+
     else{
-      alert('Please fill the form completely')
+      toast.warning('Please fill the form completely')
     }
- } 
+ }
+ 
+ //function for login
+ const handleLogin = async()=>{
+   const {email,password} = userDetails
+
+   if(email && password){
+    const result = await loginAPI(userDetails)
+    console.log(result);
+
+    if(result.status===200){
+      //storing data to session storage
+      sessionStorage.setItem("existingUser",JSON.stringify(result.data.existingUser))
+      sessionStorage.setItem("token",result.data.token)
+
+     toast.success("Login Successfull")
+      setUserDetails({
+        username:"",
+        email:"",
+        password:""
+      })
+      setTimeout(()=>{
+        navigate('/')
+      },2000)
+      
+    }
+    else{
+      toast.error(`${result.response.data}`)
+    }
+   }
+
+   else{
+    toast.warning("Please fill the form completely")
+   }
+ }
 
   return (
     <>
@@ -88,7 +128,7 @@ function Auth({register}) {
     {
     register?
     <button type='button' style={{width:'100%',height:'50px'}} className='btn bg-warning text-dark fw-bold' onClick={handleRegister}>Register</button>:
-    <button type='button' style={{width:'100%',height:'50px'}} className='btn bg-primary text-light fw-bold'>Log In</button> 
+    <button type='button' style={{width:'100%',height:'50px'}} className='btn bg-primary text-light fw-bold' onClick={handleLogin}>Log In</button> 
     }
 
     {
@@ -107,6 +147,8 @@ function Auth({register}) {
         
         
      </div>
+
+     <ToastContainer position='top-center' theme='colored' autoClose={2000} />
     </>
   )
 }
