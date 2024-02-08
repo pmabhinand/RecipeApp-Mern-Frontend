@@ -58,10 +58,22 @@ const MoveToMyprofile = ()=>{
           </div>
 
           <div className='col-lg-2 flex-column ps-5 text-center'>
-             <div><Link to={'/'}>Home</Link></div>
-             <div><button onClick={MoveTORecipes} type='button' className='text-primary' style={{textDecoration:'underline',border:'transparent',backgroundColor:'transparent'}}>Recipes</button></div>
-             <div><button onClick={MoveToMyprofile} type='button' className='text-primary' style={{textDecoration:'underline',border:'transparent',backgroundColor:'transparent'}}>My Profile</button></div>
-             <div><Link to={'/shopping'}>Shopping</Link></div>
+             <div><Link style={{textDecoration:'none'}} to={'/'}>Home</Link></div>
+
+             <div>
+              <button onClick={MoveTORecipes} type='button' className='text-primary' style={{border:'transparent',backgroundColor:'transparent'}}>
+                Recipes
+              </button>
+             </div>
+
+             <div>
+              <button onClick={MoveToMyprofile} type='button' className='text-primary' style={{border:'transparent',backgroundColor:'transparent'}}>
+                My Profile
+              </button>
+              </div>
+
+             <div><Link style={{textDecoration:'none'}} to={'/shopping'}>Shopping</Link></div>
+
           </div>
           
           <div className='col-lg-5 text-center text-light'>

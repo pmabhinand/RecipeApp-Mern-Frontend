@@ -50,7 +50,7 @@ function Nav() {
         
         <div className='col-lg-3'>
           <Link to={'/'} className='d-flex' style={{textDecoration:'none'}}>
-          <img src="https://img.freepik.com/premium-vector/cartoon-drawing-baker_29937-8112.jpg" alt="baker-image" width={'80px'} height={'60px'} />
+          <img src="https://media.tenor.com/z9nkDfeJb5cAAAAj/cooking-cake.gif" alt="baker-image" width={'80px'} height={'70px'} />
             <h1 className='text-danger' style={{fontFamily:'Black Ops One',fontSize:'50px'}}>Tasty</h1>
           </Link>  
         </div>

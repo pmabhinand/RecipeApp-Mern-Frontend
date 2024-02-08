@@ -1,7 +1,7 @@
 /* Auth */
 
 .Auth{
-    background-image:url('./gallery/Auth_bg.jpg');
+    background-image: url('../src/gallery/Auth_bg.jpg');
     background-size: 100% 100vh;
 }
 
@@ -31,17 +31,39 @@
 
 /* Home */
 
-#welcome1{
-    width: 60%;
+
+#welcome2{
+    width: 100%;
     height: 100%;
-    background-image: url('./gallery/welcome.jpg');
+    color:white;
+    background-image: url('../src/gallery/welcomeimage.jpg');
     background-size: 100% 100%;
 }
-#welcome2{
-    width: 50%;
-    height: 100%;
-    background-color:black;
-    color:white;
+#explore{
+    transition: transform .5s;
+}
+#explore:hover{
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+#welcome1 h1{
+    font-size: 70px;
+    font-weight: bold;
+}
+
+#popular{
+ transition: transform .5s;
+}
+#popular:hover{
+ transform: scale(1.05);
+}
+
+#latest{
+ transition: transform .5s;  
+}
+#latest:hover{
+ transform: scale(1.05);
 }
 
 #parent{
@@ -87,6 +109,10 @@
 
 
 /*myprofile */
+#profile{
+    background-color: darkred;
+}
+
 #Logout i{
     width: 22px;
     height: 22px;
@@ -184,6 +210,12 @@
 }
 #Like:hover{
     border: 1px solid red;
+}
+#love{
+    transition: transform .5s;  
+}
+#love:hover{
+    transform: scale(1.2);
 }
 
 

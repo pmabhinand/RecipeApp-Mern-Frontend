@@ -31,3 +31,28 @@ export const allRecipeAPI = async(reqHeader)=>{
 export const myRecipeAPI = async(reqHeader)=>{
    return await commonAPI('GET',`${BASE_URL}/user/my-recipe`,"",reqHeader)
 }
+
+//get recipes based on search item on recipes page
+export const searchAPI = async(searchItem)=>{
+   return await commonAPI('GET',`${BASE_URL}/recipe/search?search=${searchItem}`) //sending searchItem as query parameter 
+}
+
+//delete recipe
+export const deleteRecipeAPI = async(recipeId,reqHeader)=>{
+   return await commonAPI('DELETE',`${BASE_URL}/recipe/remove/${recipeId}`,{},reqHeader)
+}
+
+//storing saved recipes
+export const saveRecipeAPI = async(reqBody,reqHeader)=>{
+   return await commonAPI('POST',`${BASE_URL}/save/add`,reqBody,reqHeader)
+}
+
+//function for getting saved recipes
+export const getSavedRecipeAPI = async(reqHeader)=>{
+   return await commonAPI('GET',`${BASE_URL}/save/my-save`,"",reqHeader)
+}
+
+//function for deleting saved recipes
+export const deleteSavedAPI = async(Id,reqHeader)=>{
+   return await commonAPI('DELETE',`${BASE_URL}/save/remove/${Id}`,{},reqHeader)
+}

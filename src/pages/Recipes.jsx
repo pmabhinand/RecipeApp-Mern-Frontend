@@ -4,14 +4,22 @@ import { Col, Row } from 'react-bootstrap'
 import RecipeCard from '../components/RecipeCard'
 import Footer from '../components/Footer'
 import Nav from '../components/Nav'
-import { allRecipeAPI } from '../Help/allAPI'
+import { allRecipeAPI, searchAPI } from '../Help/allAPI'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Recipes() {  
 
 //state for storing all recipes
-const [allRecipes , setAllRecipes] = useState([])   
+const [allRecipes , setAllRecipes] = useState([])  
+
+//state for storing search box value
+const [searchItem , setSearchItem] = useState("")
+
+//state for storing search recipe
+const [searchRecipe , setSearchRecipe] = useState([])
+
+
 
 
 //funtion to get recipes to all recipes page
@@ -40,41 +48,50 @@ useEffect(()=>{
  getAllRecipes()
 },[])
 
+
+//function to get recipes based on search item
+const getSearchItem = async(e)=>{
+  setSearchItem(e.target.value)
+
+const output = await searchAPI(searchItem)
+console.log(output.data);
+ 
+ if(output.status===200){
+  setSearchRecipe(output.data)
+ }
+ else{
+  toast.error(output.response.data)
+ }
+
+}
+
+
 //filtering quick and easy recipes
 const quick = allRecipes.filter((data)=>data.category==='Quick & Easy')
-console.log(quick);
 
 //filtering breakfast recipes
 const breakFast = allRecipes.filter((data)=>data.category==='Breakfast')
-console.log(breakFast);
 
 //filtering brunch recipes
 const brunch = allRecipes.filter((data)=>data.category==='Brunch')
-console.log(brunch);
 
 //filtering lunch recipes
 const lunch = allRecipes.filter((data)=>data.category==='Lunch')
-console.log(lunch);
 
 //filtering snacks recipes
 const snacks = allRecipes.filter((data)=>data.category==='Snacks')
-console.log(snacks);
 
 //filtering dinner recipes
 const dinner = allRecipes.filter((data)=>data.category==='Dinner')
-console.log(dinner);
 
 //filtering dessert recipes
 const dessert = allRecipes.filter((data)=>data.category==='Dessert')
-console.log(dessert);
 
 //filtering dessert recipes
 const drinks = allRecipes.filter((data)=>data.category==='Drinks')
-console.log(drinks);
 
 //filtering side dish recipes
 const side = allRecipes.filter((data)=>data.category==='Side Dish')
-console.log(side);
 
 
 
@@ -91,9 +108,28 @@ console.log(side);
 
       <div className='mt-3'>
         <div id='search' className='text-center'>
-          <input className='text-center' type="text" placeholder='Search Recipes' />
+          <input onChange={getSearchItem} value={searchItem} className='text-center' type="text" placeholder='Search Recipes' />
         </div>
       </div>
+
+      {/* search recipe */}
+      {searchItem?
+      <div className='mt-5'>
+      <Row>
+         {
+         searchRecipe?.length>0?
+          searchRecipe?.map((item)=>(
+         <Col lg={2} className='ms-5 me-5 mb-5'>
+          <RecipeCard recipe={item} love={'love'}/>
+         </Col>
+          )) :
+          null  
+         }
+       </Row>
+      </div>
+         :null
+        }
+
 
 
 
@@ -104,7 +140,7 @@ console.log(side);
          {quick?.length>0?
           quick?.map((item)=>(
          <Col lg={2} className='ms-5 me-5 mb-5'>
-          <RecipeCard recipe={item}/>
+          <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
           <p>Nothing to display</p>  
@@ -119,7 +155,7 @@ console.log(side);
          {breakFast?.length>0?
           breakFast?.map((item)=>(
          <Col lg={2} className='ms-5 me-5 mb-5'>
-          <RecipeCard recipe={item}/>
+          <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
           <p>Nothing to display</p>  
@@ -134,7 +170,7 @@ console.log(side);
         {brunch?.length>0?
           brunch?.map((item)=>(
          <Col lg={2} className='ms-5 me-5 mb-5'>
-          <RecipeCard recipe={item}/>
+          <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
           <p>Nothing to display</p>  
@@ -149,7 +185,7 @@ console.log(side);
         {lunch?.length>0?
           lunch?.map((item)=>(
          <Col lg={2} className='ms-5 me-5 mb-5'>
-          <RecipeCard recipe={item}/>
+          <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
           <p>Nothing to display</p>  
@@ -164,7 +200,7 @@ console.log(side);
         {snacks?.length>0?
           snacks?.map((item)=>(
          <Col lg={2} className='ms-5 me-5 mb-5'>
-          <RecipeCard recipe={item}/>
+          <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
           <p>Nothing to display</p>  
@@ -179,7 +215,7 @@ console.log(side);
         {dinner?.length>0?
           dinner?.map((item)=>(
          <Col lg={2} className='ms-5 me-5 mb-5'>
-          <RecipeCard recipe={item}/>
+          <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
           <p>Nothing to display</p>  
@@ -194,7 +230,7 @@ console.log(side);
         {dessert?.length>0?
           dessert?.map((item)=>(
          <Col lg={2} className='ms-5 me-5 mb-5'>
-          <RecipeCard recipe={item}/>
+          <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
           <p>Nothing to display</p>  
@@ -209,7 +245,7 @@ console.log(side);
         {drinks?.length>0?
           drinks?.map((item)=>(
          <Col lg={2} className='ms-5 me-5 mb-5'>
-          <RecipeCard recipe={item}/>
+          <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
           <p>Nothing to display</p>  
@@ -224,7 +260,7 @@ console.log(side);
         {side?.length>0?
           side?.map((item)=>(
          <Col lg={2} className='ms-5 me-5 mb-5'>
-          <RecipeCard recipe={item}/>
+          <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
           <p>Nothing to display</p>  
