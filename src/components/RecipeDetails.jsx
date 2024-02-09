@@ -17,10 +17,10 @@ console.log(seeRecipe);
 
       <div id='Details' className='mt-5 mb-5'>
 
-         <h1 className='text-center' style={{color:'darkred'}}>{seeRecipe.recipeName}</h1>
+         <h1 className='text-center fw-bold' style={{color:'darkred'}}>{seeRecipe.recipeName}</h1>
          <hr />
-         <p className='ps-5 text-dark'>Recipy by<span className='fw-bold ms-2 text-primary'>Abhinand</span></p>
-         <p className='ps-5 pe-5 text-dark'>{seeRecipe.introduction}</p>
+         
+         <p className='ps-5 pe-5 text-dark fs-5'>{seeRecipe.introduction}</p>
 
          <button id='save' className='ms-5 d-flex'>
             <h5 className='mt-2 ms-1'>Save</h5>
@@ -33,25 +33,25 @@ console.log(seeRecipe);
 
          <div className='d-flex mt-5 ms-5'>
            <i class="fa-solid fa-utensils"></i>
-           <p className='ms-2'>Ideal For : <span className='fw-bold'>{seeRecipe.category}</span></p>
+           <p className='ms-2 fs-5'>Ideal For : <span className='fw-bold'>{seeRecipe.category}</span></p>
          </div>
 
          <div className='d-flex mt-2 ms-5'>
            <i class="fa-regular fa-clock"></i>
-           <p className='ms-2'>Ready In : <span className='fw-bold'>{seeRecipe.time}</span></p>
+           <p className='ms-2 fs-5'>Ready In : <span className='fw-bold'>{seeRecipe.time}</span></p>
          </div>
 
          <div className='d-flex mt-4 ms-5'>
            <i class="fa-solid fa-plate-wheat"></i>
-            <h4 className='ms-2 text-dark'>Ingredients:</h4>
+            <h3 className='ms-2 text-dark'>Ingredients:</h3>
          </div>
-         <p className='ps-5 pe-5 text-dark'>{seeRecipe.ingredients}</p>
+         <p className='ps-5 pe-5 text-dark fs-5'>{seeRecipe.ingredients}</p>
 
          <div className='d-flex ps-5 mt-4'>
           <i class="fa-solid fa-bowl-rice mt-1"></i>
           <h3 className='ms-2 text-dark'>Preparation:</h3>
          </div>
-         <p className='ps-5 pe-5 text-dark'>{seeRecipe.preparation}</p>
+         <p className='ps-5 pe-5 text-dark fs-5'>{seeRecipe.preparation}</p>
 
       </div>
 

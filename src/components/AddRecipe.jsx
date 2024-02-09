@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../App.css'
 import SecondNav from './SecondNav'
 import Footer from './Footer'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { addRecipeAPI } from '../Help/allAPI';
+import { addRecipeAPI, updateRecipeAPI } from '../Help/allAPI';
 import { useNavigate } from 'react-router-dom';
+import { editRecipeContext } from '../contextAPI/ShareData';
 
 function AddRecipe() {
+
+//accessing context API
+const {editRecipe,setEditRecipe} = useContext(editRecipeContext)   
 
 //state for storing add recipe details
 const [RecipeInfo , setRecipeInfo] = useState({
@@ -17,9 +21,9 @@ const [RecipeInfo , setRecipeInfo] = useState({
    ingredients:"",
    preparation:"",
    time:"",
-   url:""
+   url:"",
+   id:""
 })
-console.log(RecipeInfo);
 
 //state to store token
 const [token , setToken] = useState("")
@@ -37,14 +41,18 @@ useEffect(()=>{
 //function to clear form for clear button
 const clearForm = ()=>{
    setRecipeInfo({
-     recipeName:"",
-     introduction:"",
-     category:"",
-     ingredients:"",
-     preparation:"",
-     time:"",
-     url:""
-   })
+      recipeName:"",
+      introduction:"",
+      category:"",
+      ingredients:"",
+      preparation:"",
+      time:"",
+      url:"",
+      id:""
+    })
+
+    setEditRecipe("")
+
 }
 
 //function to add recipe for add button
@@ -75,6 +83,60 @@ const handleRecipe = async()=>{
          toast.error(result.response.data)
       }
       
+   }
+
+   else{
+      toast.warning('Please fill the form completely')
+   }
+
+}
+
+//function for getting recipe details to form for edit
+const showRecipeDetails = ()=>{
+   setRecipeInfo({
+      recipeName:editRecipe.recipeName,
+     introduction:editRecipe.introduction,
+     category:editRecipe.category,
+     ingredients:editRecipe.ingredients,
+     preparation:editRecipe.preparation,
+     time:editRecipe.time,
+     url:editRecipe.url,
+     id:editRecipe._id
+   })
+}
+
+useEffect(()=>{
+   if(editRecipe){
+     showRecipeDetails()
+   }
+},[])
+
+
+//function for updating recipe
+const handleUpdate = async()=>{
+   const {recipeName,introduction,category,ingredients,preparation,time,url} = RecipeInfo
+
+   if(recipeName && introduction && category && ingredients && preparation && time && url){
+      const reqHeader = {
+         "Content-Type":"application/json",
+         "Authorization":`Bearer ${token}`
+       }
+
+       const updated = await updateRecipeAPI(RecipeInfo,reqHeader)
+
+       if(updated.status===200){
+         toast.success('Recipe updated successfully')
+         clearForm()
+         setEditRecipe("")
+         
+         setTimeout(()=>{
+            navigate('/myprofile')
+          },3000)
+       }
+       else{
+         console.log(updated.response.data);
+       }
+
    }
 
    else{
@@ -156,8 +218,16 @@ const handleRecipe = async()=>{
          </div>
 
          <div className='mt-5'>
-            <button onClick={handleRecipe} type='button' className='btn btn-success ms-5 me-5'>Add</button>
-            <button onClick={clearForm} type='button' className='btn btn-danger'>clear</button>
+            {
+               editRecipe?
+               <button onClick={handleUpdate} type='button' className='btn btn-success ms-5 me-5'>Update</button>
+               :
+               <button onClick={handleRecipe} type='button' className='btn btn-success ms-5 me-5'>Add</button>
+            } 
+
+                <button onClick={clearForm} type='button' className='btn btn-danger'>clear</button>
+         
+            
          </div>
 
 

@@ -80,7 +80,7 @@ useEffect(()=>{
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1
   };
 
@@ -243,30 +243,95 @@ useEffect(()=>{
       {/* shopping slider */}
       <div id='shopping' className='mt-5 pt-3'>
 
-        <h1 className='text-center text-light'>Shopping</h1>
+        <h1 className='text-center text-light' >Shopping</h1>
        
         <div id='parentSlider' className='mt-4'>
 
         <Slider {...settings}>
            <div id='childSlider'>
-              <img src="https://images.pexels.com/photos/3847432/pexels-photo-3847432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-              <h4 className='text-center'>Mugs</h4>
+              <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FCan-Opener-300x200.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Can Opener</h4>
+              </Link>
            </div>
 
            <div id='childSlider'>
-              <img src="https://images.pexels.com/photos/952478/pexels-photo-952478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-              <h4 className='text-center'>Kathi</h4>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FGrill-Pan-Non-Stick.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>GrillPan</h4>
+              </Link>
            </div>
 
            <div id='childSlider'>
-              <img src="https://images.pexels.com/photos/952478/pexels-photo-952478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-              <h4 className='text-center'>Kathi</h4>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FOven-Mitts-300x207.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Oven Mitts</h4>
+              </Link>
            </div>
 
            <div id='childSlider'>
-              <img src="https://images.pexels.com/photos/952478/pexels-photo-952478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-              <h4 className='text-center'>Kathi</h4>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FStirring-Spoon-300x195.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Stirring Spoon</h4>
+              </Link>
            </div>
+           
+           <div id='childSlider'>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FSpatula-300x129.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Spatula</h4>
+              </Link>
+           </div>
+
+           <div id='childSlider'>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FTrivet-300x300.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Trivet</h4>
+              </Link>
+           </div>
+
+           <div id='childSlider'>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FMuffin-Pan.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Muffin Pan</h4>
+              </Link>
+           </div>
+           
+           <div id='childSlider'>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FCast-Iron-Skillet-300x136.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Cast Iron Skillet</h4>
+              </Link>
+           </div>
+
+           <div id='childSlider'>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FStainless-Steel-Skillet-300x127.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Stainless Steel Skillet</h4>
+              </Link>
+           </div>
+
+           <div id='childSlider'>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FVegetable-Peeler-300x196.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Vegetable Peeler</h4>
+              </Link>
+           </div>
+
+           <div id='childSlider'>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FChefs-Knife-Budget-Victorinox-Fibrox.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Chef's Knife</h4>
+              </Link>
+           </div>
+
+           <div id='childSlider'>
+             <Link to={'/shopping'} style={{textDecoration:'none'}}>
+              <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FMeasuring-Spoons-300x173.jpg&w=384&q=85" alt="" />
+              <h4 className='text-center'>Measuring Spoons</h4>
+              </Link>
+           </div>
+
         </Slider>
 
         </div>

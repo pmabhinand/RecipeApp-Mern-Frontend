@@ -85,21 +85,26 @@
 
 #shopping{
     height: 30rem;
-    background-color: darkgray;
+    background-color: black;
 }
 #parentSlider{
-    width: 75%;
+    width: 90%;
     margin: auto;
 }
 #childSlider{
     height: 20rem;
-    background-color: white;
+    background-color:white;
     border-radius: 10px;
 }
 #childSlider img{
     width: 100%;
     height: 14rem;
     border-radius: 10px;
+}
+#childSlider h4{
+    margin-top: 20px;
+    color: darkred;
+    font-weight: bold;
 }
 
 .slick-slide div{

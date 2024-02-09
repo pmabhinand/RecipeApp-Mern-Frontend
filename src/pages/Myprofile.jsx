@@ -5,7 +5,7 @@ import {Col,Row } from 'react-bootstrap'
 import RecipeCard from '../components/RecipeCard'
 import Footer from '../components/Footer'
 import SecondNav from '../components/SecondNav'
-import { getSavedRecipeAPI, myRecipeAPI } from '../Help/allAPI'
+import { getSavedRecipeAPI, myRecipeAPI, uploadImageAPI } from '../Help/allAPI'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { deleteSavedRecipeContext, removeRecipeContext } from '../contextAPI/ShareData'
@@ -28,6 +28,12 @@ const [myRecipe , setMyRecipe] = useState([])
 
 //state for storing saved recipes
 const [likedRecipe , setLikedRecipe] = useState([])
+
+//state for storing profile image
+const [profileImage , setProfileImage] = useState("")
+
+//state for storing profile image url
+const [imageUrl , setImageUrl] = useState("")
 
 
 
@@ -90,19 +96,70 @@ useEffect(()=>{
 },[deleteSaved])
 
 
+useEffect(()=>{
+  profileImage&&
+  setImageUrl(URL.createObjectURL(profileImage))
+},[profileImage])
+
+
+//function for updating profile image
+const uploadImage = async()=>{
+  if(profileImage){
+    const token = sessionStorage.getItem("token")
+    const reqHeader = {
+      "Content-Type":"multipart/form-data",
+      "Authorization":`Bearer ${token}`
+    }
+
+    const username = JSON.parse(sessionStorage.getItem("existingUser")).username
+    const email = JSON.parse(sessionStorage.getItem("existingUser")).email
+    const password = JSON.parse(sessionStorage.getItem("existingUser")).password
+
+    const reqBody = new FormData()
+
+    reqBody.append("username",username)
+    reqBody.append("email",email)
+    reqBody.append("password",password)
+    reqBody.append("profile",profileImage)
+
+  const result = await uploadImageAPI(reqBody,reqHeader)
+
+  if(result.status===200){
+    toast.success('Profile photo updated successfully')
+  }
+  else{
+    toast.error(result.response.data)
+  }
+
+  }
+
+  else{
+    toast.warning('Please select the photo')
+  }
+
+}
+
+
   return (
     <div style={{overflowX:'hidden'}}>
     {/* logo */}
     <SecondNav/>
     
     {/* profile */}
-    <div id='profile' className='pt-2'>
+    <div id='profile' className='pt-2 pb-2'>
+
         <div id='userimg'>
+
            <label htmlFor="image">
-            <input type="file" id='image' style={{display:'none'}}/>
-          <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1242824045.1690906162&semt=ais" alt="" />
-           <div><i class="fa-solid fa-camera text-dark"></i></div>
+            <input onChange={(e)=>setProfileImage(e.target.files[0])} type="file" id='image' style={{display:'none'}}/>
+          <img src={imageUrl?imageUrl:"https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1242824045.1690906162&semt=ais"} alt="" />
+           <div><i class="fa-solid fa-camera text-light"></i></div>
             </label>
+
+        </div>
+
+        <div className='text-center mt-4'>
+          <button onClick={uploadImage} className='btn btn-light text-danger' type='button'>Update Photo</button>
         </div>
 
         <h1 className='text-center text-light mt-4'>{username}</h1>

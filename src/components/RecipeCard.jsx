@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import '../App.css'
-import { Link } from 'react-router-dom'
-import { deleteSavedRecipeContext, removeRecipeContext, seeRecipeDetailsContext } from '../contextAPI/ShareData'
+import { Link, useNavigate } from 'react-router-dom'
+import { deleteSavedRecipeContext, editRecipeContext, removeRecipeContext, seeRecipeDetailsContext } from '../contextAPI/ShareData'
 import { deleteRecipeAPI, deleteSavedAPI, saveRecipeAPI } from '../Help/allAPI'
 
 function RecipeCard({recipe,change,like,love}) {
@@ -12,6 +12,11 @@ const {seeRecipe,setSeeRecipe} = useContext(seeRecipeDetailsContext)
 const {removeRecipe,setRemoveRecipe} = useContext(removeRecipeContext)
 
 const {deleteSaved , setDeleteSaved} = useContext(deleteSavedRecipeContext)
+
+const {editRecipe,setEditRecipe} = useContext(editRecipeContext)
+
+//use navigate
+const navigate = useNavigate()
 
 //cutting introduction
  const intro = recipe.introduction.slice(0,100)
@@ -80,6 +85,13 @@ const removeSave = async(Id)=>{
 }
 
 
+//function for editing recipe
+const handleEdit = (recipe)=>{
+  setEditRecipe(recipe)
+  navigate('/add-recipe')
+}
+
+
   return (
     <>
        
@@ -96,10 +108,19 @@ const removeSave = async(Id)=>{
                
 
                  <div className='d-flex' id='timer'>
-                   <div className='d-flex'>
-                     <i class="fa-regular fa-clock text-primary"></i>
-                     <p className='ms-1 text-dark'>{recipe.time}</p>
+                   {
+                    change?
+                    <button onClick={()=>handleEdit(recipe)} type='button' className='d-flex' style={{border:'transparent',backgroundColor:'transparent'}}>
+                    <i class="fa-solid fa-pen-nib text-primary"></i>
+                     <p className='ms-1 text-dark'>Edit</p> 
+
+                   </button>
+                    :
+                    <div className='d-flex'>
+                    <i class="fa-regular fa-clock text-primary"></i>
+                     <p className='ms-1 text-dark'>{recipe.time}</p>   
                    </div>
+                   }
 
                   {change&&
                    <button onClick={()=>deleteRecipe(recipe._id)} type='button' id='Like'>

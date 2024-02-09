@@ -56,3 +56,14 @@ export const getSavedRecipeAPI = async(reqHeader)=>{
 export const deleteSavedAPI = async(Id,reqHeader)=>{
    return await commonAPI('DELETE',`${BASE_URL}/save/remove/${Id}`,{},reqHeader)
 }
+
+//function for updating recipe
+export const updateRecipeAPI = async(reqBody,reqHeader)=>{
+   return await commonAPI('PUT',`${BASE_URL}/recipe/update`,reqBody,reqHeader)
+}
+
+//function for updating profile image
+export const uploadImageAPI = async(reqBody,reqHeader)=>{
+  return await commonAPI('PUT',`${BASE_URL}/user/update`,reqBody,reqHeader)
+  
+}
