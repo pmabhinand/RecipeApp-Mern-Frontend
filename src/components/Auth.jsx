@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../App.css'
 import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginAPI, registerAPI } from '../Help/allAPI';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { isTokenContext } from '../contextAPI/ShareData';
 
 
 function Auth({register}) {
+
+  //accessing context API
+  const {isToken , setIsToken} = useContext(isTokenContext)
   
   //state for storing values from register page input box
   const [userDetails , setUserDetails] = useState({
@@ -64,6 +68,7 @@ function Auth({register}) {
       sessionStorage.setItem("token",result.data.token)
 
      toast.success("Login Successfull")
+     setIsToken(true)
       setUserDetails({
         username:"",
         email:"",

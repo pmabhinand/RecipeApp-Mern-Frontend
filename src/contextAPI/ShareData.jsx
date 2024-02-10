@@ -1,7 +1,5 @@
 import React, { createContext, useState } from 'react'
 
-//context for seeing recipe card details
-export const seeRecipeDetailsContext = createContext()
 
 //context for delete recipe
 export const removeRecipeContext = createContext()
@@ -12,28 +10,34 @@ export const deleteSavedRecipeContext = createContext()
 //context for editing recipe
 export const editRecipeContext = createContext()
 
+//context for protecting route after logout
+export const isTokenContext = createContext()
+
 function ShareData({children}) {
 
-const [seeRecipe , setSeeRecipe] = useState({})
 
 const [removeRecipe , setRemoveRecipe] = useState({})
 
 const [deleteSaved , setDeleteSaved] = useState({})
 
-const [editRecipe , setEditRecipe] = useState({})
+const [editRecipe , setEditRecipe] = useState("")
+
+const [isToken , setIsToken] = useState(true)
     
 
   return (
 <>
-  <seeRecipeDetailsContext.Provider value={{seeRecipe,setSeeRecipe}}>
+  
   <removeRecipeContext.Provider value={{removeRecipe,setRemoveRecipe}}> 
   <deleteSavedRecipeContext.Provider value={{deleteSaved , setDeleteSaved}}>
-  <editRecipeContext.Provider value={{editRecipe,setEditRecipe}}> 
+  <editRecipeContext.Provider value={{editRecipe,setEditRecipe}}>
+  <isTokenContext.Provider value={{isToken , setIsToken}}>   
      {children}
+  </isTokenContext.Provider>   
   </editRecipeContext.Provider>    
   </deleteSavedRecipeContext.Provider>   
   </removeRecipeContext.Provider>   
-  </seeRecipeDetailsContext.Provider>    
+      
     
     
 </>

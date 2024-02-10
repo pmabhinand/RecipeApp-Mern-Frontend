@@ -1,14 +1,52 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import '../App.css'
 import Footer from './Footer'
-import { seeRecipeDetailsContext } from '../contextAPI/ShareData'
+import { saveRecipeAPI } from '../Help/allAPI'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function RecipeDetails() {
 
-//accessing contextAPI
-const {seeRecipe,setSeeRecipe} = useContext(seeRecipeDetailsContext)
-console.log(seeRecipe);
+//state for storing recipe details from session storage
+const [seeRecipe , setSeeRecipe] = useState({})
+
+//function for showing recipe details
+const showRecipe = ()=>{
+  setSeeRecipe(JSON.parse(sessionStorage.getItem("recipeDetails")))
+}
+
+useEffect(()=>{
+ showRecipe()
+},[])
+
+
+//function for saving recipes from recipe details page
+const saveRecipe = async()=>{
+  if(sessionStorage.getItem("token")){
+    const token = sessionStorage.getItem("token")
+
+    const reqHeader = {
+      "Content-Type":"application/json",
+      "Authorization":`Bearer ${token}`
+    }
+    
+    const result = await saveRecipeAPI(seeRecipe,reqHeader)
+    if(result.status===200){
+      document.getElementById("save").innerHTML =  `<i class="fa-solid fa-heart text-danger text-center fa-2x ms-4 mt-1"></i>`
+      
+    }
+
+
+  }
+
+  else{
+    toast.warning('Please Login')
+  }
+
+
+}
 
 
   return (
@@ -22,9 +60,9 @@ console.log(seeRecipe);
          
          <p className='ps-5 pe-5 text-dark fs-5'>{seeRecipe.introduction}</p>
 
-         <button id='save' className='ms-5 d-flex'>
+         <button onClick={saveRecipe} type='button' id='save' className='ms-5 d-flex'>
             <h5 className='mt-2 ms-1'>Save</h5>
-            <i class="fa-regular fa-heart text-danger mt-2 ms-1" style={{fontSize:'25px'}}></i>
+            <i class="fa-regular fa-heart text-danger mt-2" style={{fontSize:'25px'}}></i>
          </button>
 
          <div id='photo'>
@@ -57,7 +95,7 @@ console.log(seeRecipe);
 
       <Footer/>
     
-    
+      <ToastContainer position='top-center' theme='colored' autoClose={2000} />
     
     </div>
   )

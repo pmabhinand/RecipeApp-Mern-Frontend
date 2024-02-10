@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 import {Col,Row } from 'react-bootstrap'
 import RecipeCard from '../components/RecipeCard'
 import Footer from '../components/Footer'
-import SecondNav from '../components/SecondNav'
 import { getSavedRecipeAPI, myRecipeAPI, uploadImageAPI } from '../Help/allAPI'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { deleteSavedRecipeContext, removeRecipeContext } from '../contextAPI/ShareData'
+import { BASE_URL } from '../Help/baseurl'
+import Nav from '../components/Nav'
 
 
 
@@ -29,17 +30,25 @@ const [myRecipe , setMyRecipe] = useState([])
 //state for storing saved recipes
 const [likedRecipe , setLikedRecipe] = useState([])
 
-//state for storing profile image
+//state for storing profile image from input box
 const [profileImage , setProfileImage] = useState("")
 
 //state for storing profile image url
 const [imageUrl , setImageUrl] = useState("")
 
+//state for storing profile image name from session storage
+const [userImage , setUserImage] = useState("")
+
+//state for showing profile image automatically after clicking upload button
+const [showImage , setShowImage] = useState(false)
+
 
 
 useEffect(()=>{
   setUsername(JSON.parse(sessionStorage.getItem("existingUser")).username)
-},[])
+
+  setUserImage(JSON.parse(sessionStorage.getItem("existingUser")).profile)
+},[showImage])
 
 
 //function to get recipes to my recipes page
@@ -95,7 +104,7 @@ useEffect(()=>{
   MySavedRecipes()
 },[deleteSaved])
 
-
+//for converting profile image to url
 useEffect(()=>{
   profileImage&&
   setImageUrl(URL.createObjectURL(profileImage))
@@ -123,9 +132,18 @@ const uploadImage = async()=>{
     reqBody.append("profile",profileImage)
 
   const result = await uploadImageAPI(reqBody,reqHeader)
+  console.log(result.data);
 
   if(result.status===200){
-    toast.success('Profile photo updated successfully')
+
+    sessionStorage.setItem("existingUser",JSON.stringify(result.data))
+
+    setProfileImage("")
+
+    setImageUrl("")
+
+    setShowImage(true)
+
   }
   else{
     toast.error(result.response.data)
@@ -139,27 +157,43 @@ const uploadImage = async()=>{
 
 }
 
+//for displaying update photo button only after photo selected
+const showButton = ()=>{
+  if(!imageUrl){
+  document.getElementById("photoButton").style.display = "none"
+  }
+  else{
+    document.getElementById("photoButton").style.display = "initial"
+  }
+}
+
+useEffect(()=>{
+ showButton()
+},[imageUrl])
+
+
+
 
   return (
     <div style={{overflowX:'hidden'}}>
-    {/* logo */}
-    <SecondNav/>
+    {/* header */}
+     <Nav/>
     
     {/* profile */}
-    <div id='profile' className='pt-2 pb-2'>
+    <div id='profile' className='pb-2'>
 
         <div id='userimg'>
 
            <label htmlFor="image">
             <input onChange={(e)=>setProfileImage(e.target.files[0])} type="file" id='image' style={{display:'none'}}/>
-          <img src={imageUrl?imageUrl:"https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1242824045.1690906162&semt=ais"} alt="" />
+          <img src={imageUrl?imageUrl:`${BASE_URL}/upload/${userImage}`} alt="upload photo" />
            <div><i class="fa-solid fa-camera text-light"></i></div>
             </label>
 
         </div>
 
         <div className='text-center mt-4'>
-          <button onClick={uploadImage} className='btn btn-light text-danger' type='button'>Update Photo</button>
+          <button id='photoButton' onClick={uploadImage} className='btn btn-light text-danger' type='button'>Update Photo</button>
         </div>
 
         <h1 className='text-center text-light mt-4'>{username}</h1>
@@ -195,7 +229,7 @@ const uploadImage = async()=>{
           <RecipeCard recipe={item} change={'delete'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          <h3 className='text-center text-secondary'>You have not added any recipes yet</h3>  
          }
         
         </Row>
@@ -224,7 +258,7 @@ const uploadImage = async()=>{
           <RecipeCard recipe={item} like={'saved'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          <h3 className='text-center text-secondary'>You have not saved any recipes yet</h3>   
          }
         </Row>
       </div>

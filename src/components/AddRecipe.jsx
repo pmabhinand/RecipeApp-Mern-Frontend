@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import '../App.css'
-import SecondNav from './SecondNav'
 import Footer from './Footer'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addRecipeAPI, updateRecipeAPI } from '../Help/allAPI';
 import { useNavigate } from 'react-router-dom';
 import { editRecipeContext } from '../contextAPI/ShareData';
+import Nav from '../components/Nav'
 
 function AddRecipe() {
 
@@ -150,8 +150,8 @@ const handleUpdate = async()=>{
   return (
     <div style={{overflowX:'hidden'}}>
      
-     {/* logo */}
-      <SecondNav/>
+     {/* header */}
+      <Nav/>
 
       <h1 className='text-center pt-5 pb-5 shadow' style={{color:'darkred'}}>Add Recipe</h1>
 
@@ -204,9 +204,7 @@ const handleUpdate = async()=>{
                 <option value="15 Min">15 Min</option>
                 <option value="30 Min">30 Min</option>
                 <option value="1 Hr">1 Hr</option>
-                <option value="1 Hr 30 Min">1 Hr 30 Min</option>
                 <option value="2 Hr">2 Hr</option>
-                <option value="2 Hr 30 Min">2 Hr 30 Min</option>
                 <option value="3 Hr">3 Hr</option>
             </select>
             </div>

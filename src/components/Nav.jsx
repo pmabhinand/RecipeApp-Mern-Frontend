@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../App.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { isTokenContext } from '../contextAPI/ShareData';
 
 function Nav() {
+
+  //accessing context API
+  const {isToken , setIsToken} = useContext(isTokenContext)
 
   //state for checking login
   const [isLogin , setIsLogin] = useState(false)
@@ -43,14 +47,33 @@ function Nav() {
     }
   }
 
+  //function for logout
+  const handleLogout = ()=>{
+    sessionStorage.removeItem("token")
+    sessionStorage.removeItem("existingUser")
+
+    if(sessionStorage.getItem("recipeDetails")){
+      sessionStorage.removeItem("recipeDetails")
+    }
+
+    setIsToken(false)
+    
+    toast.success("LogOut Successfull")
+    
+    setTimeout(()=>{
+      navigate('/login')
+    },3000)
+
+  }
+
 
   return (
     <>
-     <div className='row' style={{width:'100%',height:'80px',overflowX:'hidden'}}>
+     <div className='row mb-3' style={{width:'100%',height:'80px',overflowX:'hidden'}}>
         
         <div className='col-lg-3'>
           <Link to={'/'} className='d-flex' style={{textDecoration:'none'}}>
-          <img src="https://media.tenor.com/z9nkDfeJb5cAAAAj/cooking-cake.gif" alt="baker-image" width={'80px'} height={'70px'} />
+          <img src="https://cdn.pixabay.com/animation/2023/07/08/11/26/11-26-17-598_512.gif" alt="baker-image" width={'90px'} height={'75px'} />
             <h1 className='text-danger' style={{fontFamily:'Black Ops One',fontSize:'50px'}}>Tasty</h1>
           </Link>  
         </div>
@@ -69,7 +92,7 @@ function Nav() {
        {
         isLogin?
         <div className='col-lg-2 ps-5 pt-3' id='Logout'>
-          <Link style={{textDecoration:'none',color:'black'}} to={'/login'}><i class="fa-solid fa-user bg-danger text-light"></i> Log Out</Link>
+          <button type='button' onClick={handleLogout} style={{color:'black',border:'transparent',backgroundColor:'transparent'}}><i class="fa-solid fa-user bg-danger text-light pe-1"></i> Log Out</button>
         </div>:
         <div className='col-lg-2 pt-2' id='Navlogin'>
         <Link className='text-dark' to={'/login'} style={{textDecoration:'none'}}>
@@ -82,7 +105,7 @@ function Nav() {
 
      </div>
 
-     <hr/>
+    
 
      <ToastContainer position='top-center' theme='colored' autoClose={2000} />
 

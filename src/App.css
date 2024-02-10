@@ -129,14 +129,14 @@
 
 
 #userimg{
-    height: 5rem;
+    height: 7rem;
     text-align: center;
 }
 #userimg img{
-    width: 5rem;
-    height: 5rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
-    
+    color: white;
 }
 
 #search input{
@@ -200,27 +200,34 @@
 #Easy{
     width: 18rem;
     height: 24rem;
+    transition: transform .5s;
 }
+#Easy:hover{
+    transform: scale(1.03);
+}
+
 #Easyimg{
     height: 16rem;
     border-radius: 20px;
 }
 #Like{
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     border: 1px solid skyblue;
-    margin-left: 11rem;
+    margin-left: 12rem;
     border-radius: 10px;  
     background-color: white; 
 }
 #Like:hover{
     border: 1px solid red;
 }
+
+
 #love{
     transition: transform .5s;  
 }
 #love:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 

@@ -8,9 +8,15 @@ import AddRecipe from './components/AddRecipe';
 import Recipes from './pages/Recipes';
 import RecipeDetails from './components/RecipeDetails';
 import Shopping from './pages/Shopping';
+import { useContext } from 'react';
+import { isTokenContext } from './contextAPI/ShareData';
 
 
 function App() {
+
+//accessing context API
+const {isToken , setIsToken} = useContext(isTokenContext)
+
   return (
     <>
     
@@ -19,10 +25,10 @@ function App() {
        <Route path='/' element={<Home/>} />
        <Route path='/login' element={<Auth/>}/>
        <Route path='/register' element={<Auth register/>}/>  
-       <Route path='/myprofile' element={<Myprofile/>}/>
-       <Route path='/add-recipe' element={<AddRecipe/>}/>
-       <Route path='/recipes' element={<Recipes/>}/>
-       <Route path='/recipe-details' element={<RecipeDetails/>}/>
+       <Route path='/myprofile' element={isToken?<Myprofile/>:<Home/>}/>
+       <Route path='/add-recipe' element={isToken?<AddRecipe/>:<Home/>}/>
+       <Route path='/recipes' element={isToken?<Recipes/>:<Home/>}/>
+       <Route path='/recipe-details' element={isToken?<RecipeDetails/>:<Home/>}/>
        <Route path='/shopping' element={<Shopping/>}/>
        
     </Routes>

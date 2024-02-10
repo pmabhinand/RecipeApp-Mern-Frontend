@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import '../App.css'
@@ -10,14 +10,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { homeRecipeAPI } from '../Help/allAPI'
-import { seeRecipeDetailsContext } from '../contextAPI/ShareData'
+
 
 
 
 function Home() {
 
-//accessing context API
-const {seeRecipe,setSeeRecipe} = useContext(seeRecipeDetailsContext)  
+  
 
 
 //state for checking login
@@ -72,6 +71,10 @@ useEffect(()=>{
 },[])
 
 
+//function for showing recipe details
+const showDetails = (recipe)=>{
+  sessionStorage.setItem("recipeDetails",JSON.stringify(recipe))
+}
 
 
 
@@ -121,7 +124,7 @@ useEffect(()=>{
            popularRecipes?.length>0?
            popularRecipes?.map((item)=>(
           <Col lg={2} className='ms-5 me-5'>
-            <Link onClick={()=>setSeeRecipe(item)} to={'/recipe-details'} style={{textDecoration:'none'}}>
+            <Link onClick={()=>showDetails(item)} to={'/recipe-details'} style={{textDecoration:'none'}}>
            <div id='popular' className='card' style={{width:'17rem',height:'18rem'}}>
               <img src={item.url} alt="" style={{width:'17rem',height:'13rem'}}  />
               <h4 className='text-dark text-center mt-2'>{item.recipeName}</h4>
@@ -150,7 +153,7 @@ useEffect(()=>{
            latestRecipes?.length>0?
            latestRecipes?.map((item)=>(          
           <Col lg={2} className='ms-5 me-5'>
-          <Link onClick={()=>setSeeRecipe(item)} to={'/recipe-details'} style={{textDecoration:'none'}}>
+          <Link onClick={()=>showDetails(item)} to={'/recipe-details'} style={{textDecoration:'none'}}>
            <div id='latest' className='card' style={{width:'17rem',height:'18rem'}}>
              <img src={item.url} alt="" style={{width:'17rem',height:'13rem'}} />
              <h4 className='text-dark text-center mt-2'>{item.recipeName}</h4>
