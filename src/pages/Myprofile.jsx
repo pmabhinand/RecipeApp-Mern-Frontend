@@ -212,7 +212,7 @@ useEffect(()=>{
     </div>
 
     {/* my recipes */}
-    <div className='mt-5'>
+    <div id='myRecipes' className='mt-5'>
        <div className='d-flex ps-5'>
         <h2 className='text-dark'>My Recipes</h2>
         <button className='btn btn-danger ms-5'>
@@ -244,7 +244,7 @@ useEffect(()=>{
 
 
     {/* saved recipes */}
-    <div className='mt-5 pt-3'>
+    <div id='savedRecipes' className='mt-5 pt-3'>
     <div className='ps-5'>
         <h2 className='text-dark'>Saved Recipes</h2>
      </div>

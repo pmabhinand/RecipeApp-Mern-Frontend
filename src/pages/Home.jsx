@@ -127,7 +127,7 @@ const showDetails = (recipe)=>{
             <Link onClick={()=>showDetails(item)} to={'/recipe-details'} style={{textDecoration:'none'}}>
            <div id='popular' className='card' style={{width:'17rem',height:'18rem'}}>
               <img src={item.url} alt="" style={{width:'17rem',height:'13rem'}}  />
-              <h4 className='text-dark text-center mt-2'>{item.recipeName}</h4>
+              <p className='text-dark text-center mt-2'>{item.recipeName}</p>
            </div>
            </Link>
           </Col>))
@@ -156,7 +156,7 @@ const showDetails = (recipe)=>{
           <Link onClick={()=>showDetails(item)} to={'/recipe-details'} style={{textDecoration:'none'}}>
            <div id='latest' className='card' style={{width:'17rem',height:'18rem'}}>
              <img src={item.url} alt="" style={{width:'17rem',height:'13rem'}} />
-             <h4 className='text-dark text-center mt-2'>{item.recipeName}</h4>
+             <p className='text-dark text-center mt-2'>{item.recipeName}</p>
             </div>
             </Link>
           </Col>)):
@@ -254,84 +254,84 @@ const showDetails = (recipe)=>{
            <div id='childSlider'>
               <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FCan-Opener-300x200.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Can Opener</h4>
+              <p className='text-center'>Can Opener</p>
               </Link>
            </div>
 
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FGrill-Pan-Non-Stick.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>GrillPan</h4>
+              <p className='text-center'>GrillPan</p>
               </Link>
            </div>
 
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FOven-Mitts-300x207.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Oven Mitts</h4>
+              <p className='text-center'>Oven Mitts</p>
               </Link>
            </div>
 
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FStirring-Spoon-300x195.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Stirring Spoon</h4>
+              <p className='text-center'>Stirring Spoon</p>
               </Link>
            </div>
            
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FSpatula-300x129.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Spatula</h4>
+              <p className='text-center'>Spatula</p>
               </Link>
            </div>
 
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FTrivet-300x300.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Trivet</h4>
+              <p className='text-center'>Trivet</p>
               </Link>
            </div>
 
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FMuffin-Pan.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Muffin Pan</h4>
+              <p className='text-center'>Muffin Pan</p>
               </Link>
            </div>
            
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FCast-Iron-Skillet-300x136.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Cast Iron Skillet</h4>
+              <p className='text-center'>Cast Iron Skillet</p>
               </Link>
            </div>
 
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FStainless-Steel-Skillet-300x127.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Stainless Steel Skillet</h4>
+              <p className='text-center'>Stainless Steel Skillet</p>
               </Link>
            </div>
 
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FVegetable-Peeler-300x196.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Vegetable Peeler</h4>
+              <p className='text-center'>Vegetable Peeler</p>
               </Link>
            </div>
 
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FChefs-Knife-Budget-Victorinox-Fibrox.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Chef's Knife</h4>
+              <p className='text-center'>Chef's Knife</p>
               </Link>
            </div>
 
            <div id='childSlider'>
              <Link to={'/shopping'} style={{textDecoration:'none'}}>
               <img src="https://www.mealime.com/_next/image?url=%2Fimages%2Fkitchen-essentials%2FMeasuring-Spoons-300x173.jpg&w=384&q=85" alt="" />
-              <h4 className='text-center'>Measuring Spoons</h4>
+              <p className='text-center'>Measuring Spoons</p>
               </Link>
            </div>
 

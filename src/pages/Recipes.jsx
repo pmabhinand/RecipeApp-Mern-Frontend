@@ -104,7 +104,7 @@ const side = allRecipes.filter((data)=>data.category==='Side Dish')
      </div>
 
       {/* heading */}
-       <h1 id='recipeHeading' className='text-center p-5'>Recipes</h1>
+       <h1 id='recipeHeading' className='text-center p-4'>Recipes</h1>
 
       <div className='mt-3'>
         <div id='search' className='text-center'>

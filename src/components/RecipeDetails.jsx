@@ -35,6 +35,7 @@ const saveRecipe = async()=>{
     const result = await saveRecipeAPI(seeRecipe,reqHeader)
     if(result.status===200){
       document.getElementById("save").innerHTML =  `<i class="fa-solid fa-heart text-danger text-center fa-2x ms-4 mt-1"></i>`
+      document.getElementById("save").style.border = 'none'
       
     }
 
@@ -55,7 +56,7 @@ const saveRecipe = async()=>{
 
       <div id='Details' className='mt-5 mb-5'>
 
-         <h1 className='text-center fw-bold' style={{color:'darkred'}}>{seeRecipe.recipeName}</h1>
+         <h1 className='text-center' style={{color:'darkred'}}>{seeRecipe.recipeName}</h1>
          <hr />
          
          <p className='ps-5 pe-5 text-dark fs-5'>{seeRecipe.introduction}</p>
@@ -71,7 +72,7 @@ const saveRecipe = async()=>{
 
          <div className='d-flex mt-5 ms-5'>
            <i class="fa-solid fa-utensils"></i>
-           <p className='ms-2 fs-5'>Ideal For : <span className='fw-bold'>{seeRecipe.category}</span></p>
+           <p className='ms-2 fs-5'>Category : <span className='fw-bold'>{seeRecipe.category}</span></p>
          </div>
 
          <div className='d-flex mt-2 ms-5'>

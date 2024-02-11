@@ -103,7 +103,7 @@ const showDetails = (recipe)=>{
                </div>
                
                <h5 className='text-center text-dark pt-1'>{recipe.recipeName}</h5>
-               <p className='text-dark'>{intro}.....</p>
+               <p id='intro' className='text-dark'>{intro}.....</p>
                </Link>
                
 

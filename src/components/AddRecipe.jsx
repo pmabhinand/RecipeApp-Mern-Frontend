@@ -153,7 +153,7 @@ const handleUpdate = async()=>{
      {/* header */}
       <Nav/>
 
-      <h1 className='text-center pt-5 pb-5 shadow' style={{color:'darkred'}}>Add Recipe</h1>
+      <h1 id='addHeading' className='text-center pt-4 pb-3 shadow' style={{color:'darkred'}}>Add Recipe</h1>
 
       {/* form */}
       <div id='Addform' className='text-center p-5'>

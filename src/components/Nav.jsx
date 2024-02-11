@@ -79,14 +79,14 @@ function Nav() {
         </div>
       
 
-        <div className='col-lg-7 mt-5'>
-            <Link style={{color:'darkblue'}} className='ps-5 text-decoration-none fw-bold fs-5' to={"/"}>Home</Link>
+        <div id='menu' className='col-lg-7 mt-5'>
+            <Link style={{color:'darkblue'}} className='ps-5 text-decoration-none fs-5' to={"/"}>Home</Link>
 
-            <button onClick={MoveTORecipes} type='button' style={{color:'darkblue',border:'transparent',backgroundColor:'transparent'}} className='ps-5 fw-bold fs-5'>Recipes</button>
+            <button onClick={MoveTORecipes} type='button' style={{color:'darkblue',border:'transparent',backgroundColor:'transparent'}} className='ps-5  fs-5'>Recipes</button>
 
-            <button onClick={MoveToMyprofile} type='button' style={{color:'darkblue',border:'transparent',backgroundColor:'transparent'}} className='ps-5 fw-bold fs-5'>My Profile</button>
+            <button onClick={MoveToMyprofile} type='button' style={{color:'darkblue',border:'transparent',backgroundColor:'transparent'}} className='ps-5  fs-5'>My Profile</button>
 
-            <Link style={{color:'darkblue'}} className='ps-5 text-decoration-none fw-bold fs-5' to={"/shopping"}>Shopping</Link> 
+            <Link style={{color:'darkblue'}} className='ps-5 text-decoration-none  fs-5' to={"/shopping"}>Shopping</Link> 
         </div>
 
        {
