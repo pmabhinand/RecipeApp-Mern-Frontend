@@ -143,7 +143,7 @@ const side = allRecipes.filter((data)=>data.category==='Side Dish')
           <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          null  
          }
        </Row>
        </div>
@@ -158,7 +158,7 @@ const side = allRecipes.filter((data)=>data.category==='Side Dish')
           <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          null 
          }
        </Row>
        </div>
@@ -173,7 +173,7 @@ const side = allRecipes.filter((data)=>data.category==='Side Dish')
           <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          null
          }
        </Row>
        </div>
@@ -188,7 +188,7 @@ const side = allRecipes.filter((data)=>data.category==='Side Dish')
           <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          null 
          }
        </Row>
        </div>
@@ -203,7 +203,7 @@ const side = allRecipes.filter((data)=>data.category==='Side Dish')
           <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          null 
          }
        </Row>
        </div>
@@ -218,7 +218,7 @@ const side = allRecipes.filter((data)=>data.category==='Side Dish')
           <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          null 
          }
        </Row>
        </div>
@@ -233,7 +233,7 @@ const side = allRecipes.filter((data)=>data.category==='Side Dish')
           <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          null 
          }
        </Row>
        </div>
@@ -248,7 +248,7 @@ const side = allRecipes.filter((data)=>data.category==='Side Dish')
           <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          null 
          }
        </Row>
        </div>
@@ -263,7 +263,7 @@ const side = allRecipes.filter((data)=>data.category==='Side Dish')
           <RecipeCard recipe={item} love={'love'}/>
          </Col>
           )) :
-          <p>Nothing to display</p>  
+          null 
          }
        </Row>
        </div>

@@ -112,13 +112,13 @@ const showDetails = (recipe)=>{
                     change?
                     <button onClick={()=>handleEdit(recipe)} type='button' className='d-flex mt-1' style={{border:'transparent',backgroundColor:'transparent'}}>
                     <i class="fa-solid fa-pen-nib text-primary"></i>
-                     <p style={{fontSize:'15px',marginLeft:'3px'}} className='text-dark'>Edit</p> 
+                     <p style={{fontSize:'17px',marginLeft:'3px'}} className='text-dark'>Edit</p> 
 
                    </button>
                     :
                     <div className='d-flex mt-1'>
                     <i class="fa-regular fa-clock text-primary"></i>
-                     <p style={{fontSize:'15px',marginLeft:'3px'}} className=' text-dark'>{recipe.time}</p>   
+                     <p style={{fontSize:'17px',marginLeft:'3px'}} className=' text-dark'>{recipe.time}</p>   
                    </div>
                    }
 

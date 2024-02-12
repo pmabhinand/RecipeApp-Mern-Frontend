@@ -201,7 +201,7 @@ useEffect(()=>{
         <div className='d-flex justify-content-center align-items-center'>
             <div className='ms-3 ps-1'>
                <h5 className='ms-5 text-light'>{myRecipe.length}</h5>
-               <h5 className='text-light'>My Recipes</h5>
+               <h5 className='text-light ms-2'>My Recipes</h5>
             </div>
             <div className='ms-5'>
                <h5 className='ms-5 text-light'>{likedRecipe.length}</h5>

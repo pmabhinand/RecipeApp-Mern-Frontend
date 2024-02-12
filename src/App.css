@@ -8,7 +8,7 @@
 /* Nav */
 #menu{
     font-family: "Alfa Slab One", serif;
-    font-style: normal;
+    
 
 }
 #Navlogin{
@@ -31,7 +31,21 @@
     border: 1px solid blue;
 }
 
-
+/* footer */
+#footer h4{
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+  font-size: 30px;
+}
+#footer h6{
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+}
+#footerMenu{
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+}
 
 
 /* Home */
@@ -96,6 +110,12 @@
 #parent{
     margin-left: 55px;
 }
+#parent h6{
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-size: 20px; 
+}
+
 #rounded{
     width: 10rem;
     height: 10rem;
@@ -153,7 +173,11 @@
 #profile{
     background-color: darkred;
 }
-
+#profile h1{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight:bold;
+    font-style: normal; 
+}
 
 #Logout i{
     width: 22px;
@@ -277,6 +301,10 @@
     font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+#timer p{
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
 }
 
 #Like{

@@ -45,11 +45,11 @@ const MoveToMyprofile = ()=>{
 
   return (
     <>
-      <div className='row d-flex justify-content-center align-items-center bg-dark' style={{height:'180px',overflowX:'hidden'}}>
+      <div id='footer' className='row d-flex justify-content-center align-items-center bg-dark' style={{height:'180px',overflowX:'hidden'}}>
           <div className='col-lg-5 ps-5'>
             <h4 className='text-light'>FOLLOW US ON SOCIAL MEDIA</h4>
             <div className='d-flex'>
-              <i class="fa-brands fa-facebook fa-2x p-3 text-primary"></i>
+              <i class="fa-brands fa-facebook fa-2x pt-3 pe-3 text-primary"></i>
               <i class="fa-brands fa-youtube fa-2x p-3 text-danger"></i>
               <i class="fa-brands fa-instagram fa-2x p-3" style={{color:'purple'}}></i>
               <i class="fa-brands fa-twitter fa-2x p-3 text-primary"></i>
@@ -57,7 +57,7 @@ const MoveToMyprofile = ()=>{
             </div>
           </div>
 
-          <div className='col-lg-2 flex-column ps-5 text-center'>
+          <div id='footerMenu' className='col-lg-2 flex-column ps-5 text-center'>
              <div><Link style={{textDecoration:'none'}} to={'/'}>Home</Link></div>
 
              <div>
