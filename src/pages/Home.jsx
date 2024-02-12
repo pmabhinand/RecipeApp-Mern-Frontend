@@ -131,7 +131,7 @@ const showDetails = (recipe)=>{
            </div>
            </Link>
           </Col>))
-          :<p>Nothing to display</p>
+          :null
           }
 
        </Row>
@@ -160,7 +160,7 @@ const showDetails = (recipe)=>{
             </div>
             </Link>
           </Col>)):
-           <p>Nothing to display</p>
+           null
           }
        </Row>
 
