@@ -38,6 +38,9 @@ const saveRecipe = async()=>{
       document.getElementById("save").style.border = 'none'
       
     }
+    else{
+      toast.warning(`${result.response.data}`)
+    }
 
 
   }

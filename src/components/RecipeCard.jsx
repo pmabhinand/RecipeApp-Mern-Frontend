@@ -3,6 +3,8 @@ import '../App.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { deleteSavedRecipeContext, editRecipeContext, removeRecipeContext } from '../contextAPI/ShareData'
 import { deleteRecipeAPI, deleteSavedAPI, saveRecipeAPI } from '../Help/allAPI'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function RecipeCard({recipe,change,like,love}) {
 
@@ -53,6 +55,13 @@ const handleSave = async(savedRecipe)=>{
   }
 
   const output = await saveRecipeAPI(savedRecipe,reqHeader)
+  
+  if(output.status===200){
+    toast.success('Recipe saved')
+  }
+  else{
+    toast.warning(`${output.response.data}`)
+  }
   
 
 }
@@ -151,6 +160,8 @@ const showDetails = (recipe)=>{
 
                  
             </div>
+
+            <ToastContainer position='top-center' theme='colored' autoClose={2000} />
           
 
     </>
