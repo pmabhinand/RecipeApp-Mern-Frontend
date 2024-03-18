@@ -131,7 +131,8 @@ const showDetails = (recipe)=>{
            </div>
            </Link>
           </Col>))
-          :null
+          :
+          <h3 className='text-center'>Loading....</h3>
           }
 
        </Row>
@@ -160,7 +161,7 @@ const showDetails = (recipe)=>{
             </div>
             </Link>
           </Col>)):
-           null
+           <h3 className='text-center'>Loading....</h3>
           }
        </Row>
 
