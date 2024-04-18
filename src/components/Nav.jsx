@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import '../App.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,6 +12,9 @@ function Nav() {
 
   //state for checking login
   const [isLogin , setIsLogin] = useState(false)
+
+  //state for menuIcon in small screens
+  const [menuOpen ,setMenuOpen] = useState(false)
 
   const navigate = useNavigate()
 
@@ -69,41 +72,63 @@ function Nav() {
 
   return (
     <>
-     <div className='row mb-3' style={{width:'100%',height:'80px',overflowX:'hidden'}}>
+
+     
+
+     <nav>  
         
-        <div className='col-lg-3'>
+        <div>
           <Link to={'/'} className='d-flex' style={{textDecoration:'none'}}>
           <img src="https://cdn.pixabay.com/animation/2023/07/08/11/26/11-26-17-598_512.gif" alt="baker-image" width={'90px'} height={'75px'} />
             <h1 className='text-danger' style={{fontFamily:'Black Ops One',fontSize:'50px'}}>Tasty</h1>
           </Link>  
         </div>
-      
 
-        <div id='menu' className='col-lg-7 mt-5'>
-            <Link style={{color:'darkblue'}} className='ps-5 text-decoration-none fs-5' to={"/"}>Home</Link>
-
-            <button onClick={MoveTORecipes} type='button' style={{color:'darkblue',border:'transparent',backgroundColor:'transparent'}} className='ps-5  fs-5'>Recipes</button>
-
-            <button onClick={MoveToMyprofile} type='button' style={{color:'darkblue',border:'transparent',backgroundColor:'transparent'}} className='ps-5  fs-5'>My Profile</button>
-
-            <Link style={{color:'darkblue'}} className='ps-5 text-decoration-none  fs-5' to={"/shopping"}>Shopping</Link> 
+        <div id='menuIcon' onClick={()=>setMenuOpen(!menuOpen)}>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+        
+
+        <ul className='mt-2' >
+          <li className={menuOpen?"open" : ""}>
+            <Link style={{color:'darkblue'}} className='text-decoration-none fs-5' to={"/"}>Home</Link>
+          </li>
+          
+          <li className={menuOpen?"open" : ""}>
+            <button onClick={MoveTORecipes} style={{color:'darkblue',border:'none',backgroundColor:'transparent'}} className='fs-5'>Recipes</button>
+            </li> 
+            
+           <li className={menuOpen?"open" : ""}> 
+            <button onClick={MoveToMyprofile} style={{color:'darkblue',border:'none',backgroundColor:'transparent'}} className='fs-5'>My Profile</button>
+            </li> 
+            
+            <li className={menuOpen?"open" : ""}>
+            <Link style={{color:'darkblue'}} className='text-decoration-none  fs-5' to={"/shopping"}>Shopping</Link>
+            </li> 
+        </ul>
 
        {
         isLogin?
-        <div className='col-lg-2 ps-5 pt-3' id='Logout'>
-          <button type='button' onClick={handleLogout} style={{color:'black',border:'transparent',backgroundColor:'transparent'}}><i class="fa-solid fa-user bg-danger text-light pe-1"></i> Log Out</button>
+        <div id='Logout'>
+          <button className={menuOpen?"open btn" : "btn"} type='button' onClick={handleLogout}><i class="fa-solid fa-user bg-danger text-light pe-1"></i> Log Out</button>
         </div>:
-        <div className='col-lg-2 pt-2' id='Navlogin'>
-        <Link className='text-dark' to={'/login'} style={{textDecoration:'none'}}>
-          <i class="fa-solid fa-user me-1"></i>
+        
+        <div id='Navlogin'>
+        <button className={menuOpen?"open btn" : "btn"}>
+        <Link to={'/login'} style={{textDecoration:'none'}}>
+          <i class="fa-solid fa-user p-1 me-1"></i>
           Log In/Sign Up</Link>
+        </button>
         </div>
        }
 
+     
 
+     </nav>
 
-     </div>
+     
 
     
 

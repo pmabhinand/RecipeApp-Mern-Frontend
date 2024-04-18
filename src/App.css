@@ -1,35 +1,132 @@
 /* Auth */
 
+
 .Auth{
     background-image: url('../src/gallery/Auth_bg.jpg');
     background-size: 100% 100vh;
 }
 
 /* Nav */
-#menu{
-    font-family: "Alfa Slab One", serif;
-    
+nav{
+   overflow-x: hidden; 
+   display: flex;
+   justify-content: space-between;
 
 }
-#Navlogin{
-    border: 1px solid lightgray;
-    height: 3rem;
-    width: 10.5rem;
-    
+
+#menuIcon{
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
 }
+#menuIcon span{
+    height: 0.4rem;
+    width: 100%;
+    background-color: black;
+    border-radius: 0.2rem;
+}
+
+nav ul{
+    font-family: "Alfa Slab One", serif;
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    padding: 20px;
+    border-radius: 20px;
+}
+
 #Navlogin i{
-    width: 24px;
-    height: 24px;
     border-radius: 50%;
-    padding-left: 5px;
-    padding-top: 3px;
     color:blue;
     background-color:skyblue;
 }
-#Navlogin:hover{
-    background-color: blue;
-    border: 1px solid blue;
+#Navlogin {
+    height: 3rem;    
 }
+
+#Navlogin button:hover{
+    background-color:lightgray;        
+}
+
+#Logout button:hover{
+    background-color: lightgray;
+    
+}
+
+ul li:hover{
+    background-color: lightgray;
+}
+
+
+
+/* media query */
+
+@media(max-width:768px){
+  #menuIcon{
+    display: flex;
+  }
+
+  nav{
+    flex-direction: column;
+    align-items: start;
+
+  }
+
+  nav ul{
+    
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+
+  nav ul li{
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  #Navlogin{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  #Logout{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  #Navlogin button{
+    display: none;
+  }
+  #Logout button{
+    display: none;
+  }
+
+  ul .open{
+    display: inline;
+  }
+
+  #Navlogin .open{
+    display: inline;
+  }
+
+  #Logout .open{
+    display: inline;
+  }
+
+}
+
+
 
 /* footer */
 #footer h4{
