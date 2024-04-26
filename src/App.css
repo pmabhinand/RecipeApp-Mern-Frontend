@@ -2,8 +2,14 @@
 
 
 .Auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
     background-image: url('../src/gallery/Auth_bg.jpg');
-    background-size: 100% 100vh;
+    background-size: 100% 100%;
 }
 
 /* Nav */

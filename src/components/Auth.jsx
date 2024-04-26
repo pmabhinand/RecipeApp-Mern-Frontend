@@ -91,20 +91,21 @@ function Auth({register}) {
 
   return (
     <>
-     <div className='Auth' style={{width:'100%',height:'100vh',overflowX:'hidden'}}>
+     <div className='Auth'>
+
+      <div>
         <Link to={'/'} style={{textDecoration:'none'}}>
         <h1 className='text-center text-danger pt-5' style={{fontFamily:'Black Ops One',fontSize:'50px'}}>Tasty</h1>
         </Link>
+      </div>
 
-        <div className='row'>
-            <div className='col-lg-3 col-md-3 col-sm-2 col-xs-1'></div>
-
+        
     
-           <div className='col-lg-6 col-md-6 col-sm-8 col-xs-10 border border-primary rounded bg-light ps-4 pe-4 ms-5' style={{width:'600px',height:'480px'}}>
+           <div className='border border-primary rounded bg-light w-50 p-4'>
             
               {
-                register?<h3 className='mt-2 text-warning'>Create An Account</h3>:
-                         <h3 className='mt-2 text-primary'>Log In To Your Account</h3>
+                register?<h3 className='text-warning'>Create An Account</h3>:
+                         <h3 className='text-primary'>Log In To Your Account</h3>
               }
               
           
@@ -145,9 +146,9 @@ function Auth({register}) {
              
      </div>
 
-           <div className='col-lg-3 col-md-3 col-sm-2 col-xs-1'></div>
+          
 
-        </div>
+        
      
         
         
