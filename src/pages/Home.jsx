@@ -123,7 +123,7 @@ const showDetails = (recipe)=>{
           {
            popularRecipes?.length>0?
            popularRecipes?.map((item)=>(
-          <Col lg={2} className='ms-5 me-5'>
+          <Col lg={2} md={4} className='ms-5 me-5 mb-5'>
             <Link onClick={()=>showDetails(item)} to={'/recipe-details'} style={{textDecoration:'none'}}>
            <div id='popular' className='card' style={{width:'17rem',height:'18rem'}}>
               <img src={item.url} alt="" style={{width:'17rem',height:'13rem'}}  />
@@ -137,7 +137,7 @@ const showDetails = (recipe)=>{
 
        </Row>
 
-       <div className='text-center mt-3'>
+       <div className='text-center'>
          <button onClick={ExploreRecipes} type='button' className='btn btn-primary'>View All </button>
        </div>
 
@@ -145,7 +145,7 @@ const showDetails = (recipe)=>{
 
 
       {/* latest */}
-      <div id='latest' className='mt-5'>
+      <div id='latest' className='mt-5 mb-5'>
 
         <h1 className='text-center text-dark'>Latest Recipes</h1>
 
@@ -153,7 +153,7 @@ const showDetails = (recipe)=>{
           {
            latestRecipes?.length>0?
            latestRecipes?.map((item)=>(          
-          <Col lg={2} className='ms-5 me-5'>
+          <Col lg={2} md={4} className='ms-5 me-5 mb-5'>
           <Link onClick={()=>showDetails(item)} to={'/recipe-details'} style={{textDecoration:'none'}}>
            <div id='latest' className='card' style={{width:'17rem',height:'18rem'}}>
              <img src={item.url} alt="" style={{width:'17rem',height:'13rem'}} />
@@ -165,7 +165,7 @@ const showDetails = (recipe)=>{
           }
        </Row>
 
-       <div className='text-center mt-3'>
+       <div className='text-center'>
          <button onClick={ExploreRecipes} type='button' className='btn btn-primary'>View All</button>
        </div>
 
@@ -173,7 +173,7 @@ const showDetails = (recipe)=>{
 
 
       {/* rounded */}
-      <div className='mt-5 pt-3 pb-3'>
+      <div className='mt-5 pt-3 pb-3' id='menuRounded'>
       <div className='d-flex'>
 
          <div id='parent'>
@@ -249,7 +249,7 @@ const showDetails = (recipe)=>{
 
         <h1 className='text-center text-light' >Shopping</h1>
        
-        <div id='parentSlider' className='mt-4'>
+        <div id='parentSlider' className='mt-4 row'>
 
         <Slider {...settings}>
            <div id='childSlider'>

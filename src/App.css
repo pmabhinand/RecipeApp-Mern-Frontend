@@ -124,6 +124,17 @@ ul li:hover{
     display: inline;
   }
 
+  #menuRounded{
+    display: none;
+}
+
+}
+
+@media(max-width:480px){
+
+    #shopping{
+        display: none;
+    }
 }
 
 

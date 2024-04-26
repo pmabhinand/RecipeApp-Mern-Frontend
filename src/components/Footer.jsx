@@ -46,7 +46,7 @@ const MoveToMyprofile = ()=>{
   return (
     <>
       <div id='footer' className='row d-flex justify-content-center align-items-center bg-dark' style={{height:'180px',overflowX:'hidden'}}>
-          <div className='col-lg-5 ps-5'>
+          <div className='col-lg-5 ps-5 mb-3'>
             <h4 className='text-light'>FOLLOW US ON SOCIAL MEDIA</h4>
             <div className='d-flex'>
               <i class="fa-brands fa-facebook fa-2x pt-3 pe-3 text-primary"></i>
@@ -57,7 +57,7 @@ const MoveToMyprofile = ()=>{
             </div>
           </div>
 
-          <div id='footerMenu' className='col-lg-2 flex-column ps-5 text-center'>
+          <div id='footerMenu' className='col-lg-2 flex-column ps-5 text-center mb-4'>
              <div><Link style={{textDecoration:'none'}} to={'/'}>Home</Link></div>
 
              <div>
@@ -76,7 +76,7 @@ const MoveToMyprofile = ()=>{
 
           </div>
           
-          <div className='col-lg-5 text-center text-light'>
+          <div className='col-lg-5 text-center text-light mb-2'>
             <h4>CONTACT US</h4>
             <h6>info@tasty.org</h6>
             <h6>617.924.3452</h6>
