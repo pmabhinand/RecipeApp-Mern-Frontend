@@ -115,18 +115,18 @@ const showDetails = (recipe)=>{
 
 
       {/* popular */}
-      <div id='popular' className='mt-5'>
+      <div id='popularRecipes' className='mt-5'>
 
        <h1 className='text-center text-dark'>Popular Recipes</h1>
 
-       <Row className='mt-4'>
+       <Row className='ps-4 pe-4 mt-4'>
           {
            popularRecipes?.length>0?
            popularRecipes?.map((item)=>(
-          <Col lg={2} md={4} className='ms-5 me-5 mb-5'>
+          <Col lg={3} md={4} sm={6} xs={6} className='mb-4'>
             <Link onClick={()=>showDetails(item)} to={'/recipe-details'} style={{textDecoration:'none'}}>
-           <div id='popular' className='card' style={{width:'17rem',height:'18rem'}}>
-              <img src={item.url} alt="" style={{width:'17rem',height:'13rem'}}  />
+           <div id='popular' className='card'>
+              <img src={item.url} alt="" style={{width:'100%',height:'13rem'}}  />
               <p className='text-dark text-center mt-2'>{item.recipeName}</p>
            </div>
            </Link>
@@ -145,18 +145,18 @@ const showDetails = (recipe)=>{
 
 
       {/* latest */}
-      <div id='latest' className='mt-5 mb-5'>
+      <div id='latestRecipes' className='mt-5 mb-5'>
 
         <h1 className='text-center text-dark'>Latest Recipes</h1>
 
-        <Row className='mt-4'>
+        <Row className='ps-4 pe-4 mt-4'>
           {
            latestRecipes?.length>0?
            latestRecipes?.map((item)=>(          
-          <Col lg={2} md={4} className='ms-5 me-5 mb-5'>
+          <Col lg={3} md={4} sm={6} xs={6} className='mb-4'>
           <Link onClick={()=>showDetails(item)} to={'/recipe-details'} style={{textDecoration:'none'}}>
-           <div id='latest' className='card' style={{width:'17rem',height:'18rem'}}>
-             <img src={item.url} alt="" style={{width:'17rem',height:'13rem'}} />
+           <div id='latest' className='card'>
+             <img src={item.url} alt="" style={{width:'100%',height:'13rem'}} />
              <p className='text-dark text-center mt-2'>{item.recipeName}</p>
             </div>
             </Link>

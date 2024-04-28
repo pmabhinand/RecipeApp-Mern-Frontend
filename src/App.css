@@ -187,39 +187,45 @@ ul li:hover{
     font-family:"Abril Fatface", serif;
 }
 
+#popularRecipes h1{
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
 #popular{
  transition: transform .5s;
+ height: 18rem;
+
 }
 #popular:hover{
  transform: scale(1.05);
 }
-#popular h1{
-  font-family: "Bebas Neue", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-}
+
 #popular p{
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
   font-size: 20px;
 }
 
-#latest{
- transition: transform .5s;  
-}
-#latest:hover{
- transform: scale(1.05);
-}
-#latest h1{
+
+#latestRecipes h1{
     font-family: "Bebas Neue", sans-serif;
     font-style: normal;
     font-weight: bold;
+}
+#latest{
+ transition: transform .5s; 
+ height:18rem; 
+}
+#latest:hover{
+ transform: scale(1.05);
 }
 #latest p{
     font-family: "Bebas Neue", sans-serif;
     font-style: normal;
     font-size: 20px;
-  }
+}
+
 
 #parent{
     margin-left: 55px;
@@ -315,13 +321,13 @@ ul li:hover{
 }
 
 #search input{
-    width: 30rem;
+    width: 40%;
     height: 3rem;
     border-radius: 20px;
     border: 1px solid gray;
-    background: transparent url('https://cdn-icons-png.freepik.com/128/54/54481.png?ga=GA1.1.1242824045.1690906162') no-repeat 13px;
+    background: transparent url('https://cdn-icons-png.freepik.com/128/54/54481.png?ga=GA1.1.1242824045.1690906162') no-repeat 3%;
     
-    background-size: 20px 20px;
+    background-size: 4% 30%;
 }
 
 #myRecipes h2,h3{
@@ -392,9 +398,8 @@ ul li:hover{
 }
 
 /*Recipe card*/
-#Easy{
-    width: 18rem;
-    height: 24rem;
+
+#Easy{ 
     transition: transform .5s;
 }
 #Easy h5{
@@ -408,13 +413,16 @@ ul li:hover{
 }
 
 #Easyimg{
-    height: 16rem;
+    height: 16rem; 
     border-radius: 20px;
 }
 #intro{
     font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+#timer{
+    justify-content: space-between;
 }
 #timer p{
     font-family: "Bebas Neue", sans-serif;
@@ -425,7 +433,6 @@ ul li:hover{
     width: 30px;
     height: 30px;
     border: 1px solid skyblue;
-    margin-left: 12rem;
     border-radius: 10px;  
     background-color: white; 
 }

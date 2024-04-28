@@ -104,7 +104,7 @@ const showDetails = (recipe)=>{
   return (
     <>
        
-            <div id='Easy' className='mb-3'>
+            <div id='Easy'>
               
             <Link onClick={()=>showDetails(recipe)} to={'/recipe-details'} style={{textDecoration:'none'}}>
                <div id='Easyimg'>
@@ -148,13 +148,7 @@ const showDetails = (recipe)=>{
                     <i id='love' class="fa-regular fa-heart mt-1 text-danger" style={{fontSize:'20px'}}></i>
                     </button>
                   }
-
-
-                   
-
-                    
-                   
-                  
+                                      
 
                  </div>
 
