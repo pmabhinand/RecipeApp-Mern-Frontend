@@ -222,10 +222,10 @@ useEffect(()=>{
     <hr />
 
       <div className='mt-4'>
-        <Row>
+        <Row className='ps-5 pe-5'>
             {myRecipe?.length>0?
           myRecipe?.map((item)=>(
-         <Col lg={2} className='ms-5 me-5 mb-5'>
+         <Col lg={3} md={4} sm={6} xs={12} className='mb-4'>
           <RecipeCard recipe={item} change={'delete'}/>
          </Col>
           )) :
@@ -239,10 +239,6 @@ useEffect(()=>{
 
 
 
-
-
-
-
     {/* saved recipes */}
     <div id='savedRecipes' className='mt-5 pt-3'>
     <div className='ps-5'>
@@ -251,10 +247,10 @@ useEffect(()=>{
      <hr />
 
     <div className='mt-4'>
-        <Row>
+        <Row className='ps-5 pe-5'>
         {likedRecipe?.length>0?
           likedRecipe?.map((item)=>(
-         <Col lg={2} className='ms-5 me-5 mb-5'>
+         <Col lg={3} md={4} sm={6} xs={12} className='mb-4'>
           <RecipeCard recipe={item} like={'saved'}/>
          </Col>
           )) :

@@ -69,7 +69,7 @@ const saveRecipe = async()=>{
             <i class="fa-regular fa-heart text-danger mt-2" style={{fontSize:'25px'}}></i>
          </button>
 
-         <div id='photo'>
+         <div id='photo' className='mt-4'>
            <img src={seeRecipe.url} alt="" width={'100%'} height={'100%'}/>
          </div>
 

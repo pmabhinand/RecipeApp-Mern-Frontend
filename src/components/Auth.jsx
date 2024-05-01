@@ -101,7 +101,7 @@ function Auth({register}) {
 
         
     
-           <div className='border border-primary rounded bg-light w-50 p-4'>
+           <div id='authForm' className='border border-primary rounded bg-light p-4'>
             
               {
                 register?<h3 className='text-warning'>Create An Account</h3>:

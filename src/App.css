@@ -11,6 +11,9 @@
     background-image: url('../src/gallery/Auth_bg.jpg');
     background-size: 100% 100%;
 }
+#authForm{
+    width: 50%;
+}
 
 /* Nav */
 nav{
@@ -75,6 +78,9 @@ ul li:hover{
 /* media query */
 
 @media(max-width:768px){
+
+    /* navigation bar */
+
   #menuIcon{
     display: flex;
   }
@@ -130,18 +136,26 @@ ul li:hover{
     display: inline;
   }
 
+  /* Home - Rounded */
+
   #menuRounded{
     display: none;
 }
 
+/* Login/Register page */
+
+#authForm{
+    width: 75%;
 }
 
-@media(max-width:480px){
+/*Home - Shopping */
 
-    #shopping{
-        display: none;
-    }
+#shopping{
+    display: none;
+} 
+
 }
+
 
 
 
@@ -456,6 +470,9 @@ ul li:hover{
     font-family: "Alfa Slab One", serif;
     font-style: normal;
 }
+#Details p{
+    text-align: justify;
+}
 #Details p,h3,h5{
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
@@ -482,6 +499,18 @@ ul li:hover{
     margin: auto;
 }
 
+
+/* Shopping */
+
+#preparationTools p{
+    text-align: justify;
+}
+#cookWare p{
+    text-align: justify;
+}
+#kitchenUtensils p{
+    text-align: justify;
+}
 
 
 

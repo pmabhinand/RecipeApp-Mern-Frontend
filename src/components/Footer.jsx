@@ -45,7 +45,7 @@ const MoveToMyprofile = ()=>{
 
   return (
     <>
-      <div id='footer' className='row d-flex justify-content-center align-items-center bg-dark' style={{height:'180px',overflowX:'hidden'}}>
+      <div id='footer' className='row d-flex justify-content-center align-items-center bg-dark p-3' style={{overflowX:'hidden',overflowY:'hidden'}}>
           <div className='col-lg-5 ps-5 mb-3'>
             <h4 className='text-light'>FOLLOW US ON SOCIAL MEDIA</h4>
             <div className='d-flex'>
