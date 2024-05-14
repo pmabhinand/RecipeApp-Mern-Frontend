@@ -18,7 +18,7 @@ function Shopping() {
    <div><Nav/></div>
 
   {/* heading */}
-  <h1 className='text-center pt-3 pb-3' style={{color:'black',fontSize:'80px',fontWeight:'bold',backgroundColor:'lightgray'}}>Top Kitchen Essentials</h1>
+  <h1 className='text-center pt-3 pb-3' style={{color:'black',fontSize:'75px',fontWeight:'bold',backgroundColor:'lightgray'}}>Top Kitchen Essentials</h1>
 
 
 {/* preparation tools */}

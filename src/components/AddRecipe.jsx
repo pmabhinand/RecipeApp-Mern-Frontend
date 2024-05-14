@@ -156,23 +156,23 @@ const handleUpdate = async()=>{
       <h1 id='addHeading' className='text-center pt-4 pb-3 shadow' style={{color:'darkred'}}>Add Recipe</h1>
 
       {/* form */}
-      <div id='Addform' className='text-center p-5'>
+      <div id='Addform' className='pt-5 pb-5'>
+
 
          <div>
-         <label htmlFor="name">Name:</label>
-         <input onChange={(e)=>setRecipeInfo({...RecipeInfo,recipeName:e.target.value})} type="text" id="name" placeholder='Enter Recipe Name' value={RecipeInfo.recipeName} />
+            <label htmlFor="name">Name:</label>
+           <input onChange={(e)=>setRecipeInfo({...RecipeInfo,recipeName:e.target.value})} type="text" id="name" placeholder='Enter Recipe Name' value={RecipeInfo.recipeName} />            
          </div>
 
          <div className='mt-4'>
-            <label className='me-5' htmlFor="intro">Introduction:</label>
-            <textarea onChange={(e)=>setRecipeInfo({...RecipeInfo,introduction:e.target.value})} className='me-5' id="intro" cols="37" rows="4" placeholder='Enter an introduction about Recipe' value={RecipeInfo.introduction}></textarea>
+            <label htmlFor="intro">Introduction:</label>            
+            <textarea onChange={(e)=>setRecipeInfo({...RecipeInfo,introduction:e.target.value})} id="intro" cols="37" rows="4" placeholder='Enter an introduction about Recipe' value={RecipeInfo.introduction}></textarea>            
          </div>
 
-         <div className='mt-4'>
-            <div id='cat'>
-            <label id='category' htmlFor="type" className='me-5'>Category:</label>
-            <select onChange={(e)=>setRecipeInfo({...RecipeInfo,category:e.target.value})} name="category" id="category" className='me-5' value={RecipeInfo.category}>
-                <option value="">Select</option>
+         <div className='mt-4'>  
+             <label id='category' htmlFor="type">Category:</label>             
+            <select className='w-25' onChange={(e)=>setRecipeInfo({...RecipeInfo,category:e.target.value})} name="category" id="category" value={RecipeInfo.category}>
+                <option value="" disabled selected hidden>Select</option>
                 <option value="Breakfast">Breakfast</option>
                 <option value="Brunch">Brunch</option>
                 <option value="Lunch">Lunch</option>
@@ -182,51 +182,50 @@ const handleUpdate = async()=>{
                 <option value="Drinks">Drinks</option>
                 <option value="Quick & Easy">Quick & Easy</option>
                 <option value="Side Dish">Side Dish</option>
-            </select>
-            </div>
+            </select>            
+            <span style={{width:'30%'}}></span>
          </div>
 
-         <div>
-         <label className='pe-5' htmlFor="items">Ingredients:</label>
-         <textarea onChange={(e)=>setRecipeInfo({...RecipeInfo,ingredients:e.target.value})} className='me-5 mt-4' id="items" cols="37" rows="4" placeholder='Enter Ingredients' value={RecipeInfo.ingredients}></textarea>
+         <div className='mt-4'>
+         <label htmlFor="items">Ingredients:</label>
+         <textarea onChange={(e)=>setRecipeInfo({...RecipeInfo,ingredients:e.target.value})} id="items" cols="37" rows="4" placeholder='Enter Ingredients' value={RecipeInfo.ingredients}></textarea>
          </div>
 
-         <div>
-            <label htmlFor="preparation" className='me-5'>Preparation:</label>
-            <textarea onChange={(e)=>setRecipeInfo({...RecipeInfo,preparation:e.target.value})} className='me-5 mt-4' id="preparation" cols="37" rows="9" placeholder='Enter how to prepare in step by step' value={RecipeInfo.preparation}></textarea>
+         <div className='mt-4'>
+            <label htmlFor="preparation">Preparation:</label>
+            <textarea onChange={(e)=>setRecipeInfo({...RecipeInfo,preparation:e.target.value})} id="preparation" cols="37" rows="9" placeholder='Enter how to prepare in step by step' value={RecipeInfo.preparation}></textarea>
          </div>
 
-         <div className='d-flex' id='dropdown'>
-            <div id='drop'>
-            <label id='timelabel' htmlFor="time" className='me-5'>Preparation Time:</label>
-             <select onChange={(e)=>setRecipeInfo({...RecipeInfo,time:e.target.value})} name="time" id="time" className='mt-3' value={RecipeInfo.time}>
-                <option value="">Select</option>
+         <div className='mt-4' id='dropdown'>
+            <label id='timelabel' htmlFor="time" className=''>Time:</label>
+             <select className='w-25' onChange={(e)=>setRecipeInfo({...RecipeInfo,time:e.target.value})} name="time" id="time" value={RecipeInfo.time}>
+                <option value="" disabled selected hidden>Select</option>
                 <option value="15 Min">15 Min</option>
                 <option value="30 Min">30 Min</option>
                 <option value="1 Hr">1 Hr</option>
                 <option value="2 Hr">2 Hr</option>
                 <option value="3 Hr">3 Hr</option>
             </select>
-            </div>
+            <span style={{width:'30%'}}></span>
          </div>
 
          <div className='mt-4'>
-            <label className='me-4' htmlFor="url">Image Url:</label>
-            <input onChange={(e)=>setRecipeInfo({...RecipeInfo,url:e.target.value})} className='me-5' type="text" name="" id="url" placeholder="Enter Recipe Image Url" value={RecipeInfo.url}/>
+            <label htmlFor="url">Image Url:</label>
+            <input onChange={(e)=>setRecipeInfo({...RecipeInfo,url:e.target.value})} type="text" name="" id="url" placeholder="Enter Recipe Image Url" value={RecipeInfo.url}/>
          </div>
 
-         <div className='mt-5'>
+         <section className='mt-5'>
             {
                editRecipe?
-               <button onClick={handleUpdate} type='button' className='btn btn-success ms-5 me-5'>Update</button>
+               <button onClick={handleUpdate} type='button' className='btn btn-success'>Update</button>
                :
-               <button onClick={handleRecipe} type='button' className='btn btn-success ms-5 me-5'>Add</button>
+               <button onClick={handleRecipe} type='button' className='btn btn-success'>Add</button>
             } 
 
                 <button onClick={clearForm} type='button' className='btn btn-danger'>clear</button>
          
             
-         </div>
+         </section>
 
 
       </div>

@@ -74,91 +74,6 @@ ul li:hover{
 }
 
 
-
-/* media query */
-
-@media(max-width:768px){
-
-    /* navigation bar */
-
-  #menuIcon{
-    display: flex;
-  }
-
-  nav{
-    flex-direction: column;
-    align-items: start;
-
-  }
-
-  nav ul{
-    
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 0.25rem;
-  }
-
-
-  nav ul li{
-    width: 100%;
-    text-align: center;
-    display: none;
-  }
-
-  #Navlogin{
-    width: 100%;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  #Logout{
-    width: 100%;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  #Navlogin button{
-    display: none;
-  }
-  #Logout button{
-    display: none;
-  }
-
-  ul .open{
-    display: inline;
-  }
-
-  #Navlogin .open{
-    display: inline;
-  }
-
-  #Logout .open{
-    display: inline;
-  }
-
-  /* Home - Rounded */
-
-  #menuRounded{
-    display: none;
-}
-
-/* Login/Register page */
-
-#authForm{
-    width: 75%;
-}
-
-/*Home - Shopping */
-
-#shopping{
-    display: none;
-} 
-
-}
-
-
-
-
 /* footer */
 #footer h4{
   font-family: "Bebas Neue", sans-serif;
@@ -241,6 +156,7 @@ ul li:hover{
 }
 
 
+
 #parent{
     margin-left: 55px;
 }
@@ -263,6 +179,7 @@ ul li:hover{
     border: none;
     background-color: white;
 }
+
 
 #shopping{
     height: 30rem;
@@ -363,11 +280,31 @@ ul li:hover{
     font-family: "Alfa Slab One", serif;
     font-style: normal;
 }
+#Addform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#Addform div{
+   width: 35%;
+   display: flex;
+   justify-content: space-between; 
+}
+
+#Addform section{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 #Addform input{
-    width: 20rem;
+    width: 75%; 
     height: 40px;
     border-radius: 10px;
-    margin-left: 30px;
     text-align: center;
     border: 1px solid gray;
     
@@ -375,17 +312,11 @@ ul li:hover{
 #Addform label{
     font-weight: bold;
 }
-#cat{
-    margin-right: 12rem;
-    
-}
+
 #Addform textarea{
     border-radius: 10px;
     text-align: center;
 }
-#drop{
-    margin-left: 21rem;
-}  
 
 
 
@@ -413,7 +344,7 @@ ul li:hover{
 
 /*Recipe card*/
 
-#Easy{ 
+#Easy{   
     transition: transform .5s;
 }
 #Easy h5{
@@ -515,4 +446,122 @@ ul li:hover{
 
 
 
+/* Media Query */
+
+
+@media(max-width:930px){
+
+    /* navigation bar */
+
+  #menuIcon{
+    display: flex;
+  }
+
+  nav{
+    flex-direction: column;
+    align-items: start;
+
+  }
+
+  nav ul{
+    
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+
+  nav ul li{
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  #Navlogin{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  #Logout{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  #Navlogin button{
+    display: none;
+  }
+  #Logout button{
+    display: none;
+  }
+
+  ul .open{
+    display: inline;
+  }
+
+  #Navlogin .open{
+    display: inline;
+  }
+
+  #Logout .open{
+    display: inline;
+  }
+
+}
+
+
+@media(max-width:768px){
+    /* Home - Rounded */
+  
+    #menuRounded{
+      display: none;
+  }
+  
+  /* Login/Register page */
+  
+  #authForm{
+      width: 75%;
+  }
+  
+  /*Home - Shopping */
+  
+  #shopping{
+      display: none;
+  } 
+  
+  }
+
+
+@media(max-width:600px){
+    /* Add recipe page in extra small devices */
+    #Addform div{
+      width: 75%;
+      display: flex;
+      justify-content: space-between;     
+   }  
+
+   #Addform section{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+  
+  }
+
+@media (min-width:601px) and (max-width:900px){
+    /* setting Add recipe page on in between devices */
+    #Addform div{
+        width: 60%;
+        display: flex;
+        justify-content: space-between;     
+     }  
+  
+     #Addform section{
+      width: 30%;
+      display: flex;
+      justify-content: space-between;
+  }
+    
+}  
 
