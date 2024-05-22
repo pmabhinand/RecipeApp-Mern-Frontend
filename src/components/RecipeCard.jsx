@@ -18,7 +18,8 @@ const {editRecipe,setEditRecipe} = useContext(editRecipeContext)
 //use navigate
 const navigate = useNavigate()
 
-//cutting introduction
+//cutting name and introduction
+ const rName = recipe.recipeName.slice(0,35)
  const intro = recipe.introduction.slice(0,100)
 
  //funtion for delete recipe
@@ -111,12 +112,12 @@ const showDetails = (recipe)=>{
                 <img src={recipe.url} alt="" style={{width:'100%',height:'100%',borderRadius:'15px'}} />
                </div>
                
-               <h5 className='text-center text-dark pt-1'>{recipe.recipeName}</h5>
-               <p id='intro' className='text-dark'>{intro}.....</p>
+               <h5 className='text-center text-dark pt-1'>{rName}</h5>
+               <p style={{textAlign:'justify'}} id='intro' className='text-dark'>{intro}.....</p>
                </Link>
                
 
-                 <div className='d-flex' id='timer'>
+                 <div id='timer'>
                    {
                     change?
                     <button onClick={()=>handleEdit(recipe)} type='button' className='d-flex mt-1' style={{border:'transparent',backgroundColor:'transparent'}}>

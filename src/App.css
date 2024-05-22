@@ -157,18 +157,23 @@ ul li:hover{
 
 
 
-#parent{
-    margin-left: 55px;
-}
 #parent h6{
     font-family: "Bebas Neue", sans-serif;
-    font-style: normal;
-    font-size: 20px; 
+    font-style: normal; 
+}
+#parent5 h6{
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal; 
 }
 
-#rounded{
-    width: 10rem;
-    height: 10rem;
+#parent #rounded{
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;   
+}
+#parent5 #rounded{
+    width: 9rem;
+    height: 9rem;
     border-radius: 50%;   
 }
 #rounded img{
@@ -346,6 +351,8 @@ ul li:hover{
 
 #Easy{   
     transition: transform .5s;
+    position: relative;
+    height: 30.5rem;    
 }
 #Easy h5{
     font-family: "Teko", sans-serif;
@@ -366,9 +373,16 @@ ul li:hover{
   font-optical-sizing: auto;
   font-style: normal;
 }
-#timer{
-    justify-content: space-between;
+
+#Easy #timer{ 
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0px;
+  
 }
+
 #timer p{
     font-family: "Bebas Neue", sans-serif;
     font-style: normal;
@@ -514,9 +528,7 @@ ul li:hover{
 @media(max-width:768px){
     /* Home - Rounded */
   
-    #menuRounded{
-      display: none;
-  }
+   
   
   /* Login/Register page */
   
@@ -563,5 +575,50 @@ ul li:hover{
       justify-content: space-between;
   }
     
+} 
+
+
+@media (min-width:800px) and (max-width:1000px){
+  /* home page rounded portion in between devices */
+  #parent #rounded{
+    width: 7rem;
+    height: 7rem;  
+}
+#parent5 #rounded{
+    width: 7rem;
+    height: 7rem;  
+}
+
+}
+
+@media (min-width:600px) and (max-width:799px){
+    /* home page rounded portion in between devices */
+    #parent #rounded{
+      width: 5rem;
+      height: 5rem;  
+  }
+  #parent5 #rounded{
+    width: 5rem;
+    height: 5rem;  
+ }
+
+  }
+
+@media (max-width:599px){
+ /* home page rounded portion in small devices */   
+    #parent #rounded{
+        width: 4.5rem;
+        height: 4.5rem;  
+    }
+
+    #parent h6{
+        font-size: 12px;
+    }
+
+    #parent5{
+        display: none;
+    }
 }  
+
+
 

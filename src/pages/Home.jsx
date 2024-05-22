@@ -173,61 +173,49 @@ const showDetails = (recipe)=>{
 
 
       {/* rounded */}
-      <div className='mt-5 pt-3 pb-3' id='menuRounded'>
-      <div className='d-flex'>
+      <div className='mt-5 mb-5 pt-3 pb-3'>
+      <div id='menuRounded' className='d-flex justify-content-between'>
 
-         <div id='parent'>
-          <button onClick={ExploreRecipes} type='button' style={{border:'transparent',color:'black',backgroundColor:'transparent'}}>
+         <div id='parent'>         
            <div id='rounded'>
              <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" width={'100%'} height={'100%'} />
             </div>
-            <h6 className='text-center mt-3'>Quick & Easy Recipes</h6>
-            </button>
+            <h6 className='text-center mt-3'>Quick & Easy Recipes</h6>            
          </div>
 
-         <div id='parent'>
-          <button onClick={ExploreRecipes} type='button' style={{border:'transparent',color:'black',backgroundColor:'transparent'}}>
+         <div id='parent'>          
            <div id='rounded'>
             <img src="https://images.pexels.com/photos/139746/pexels-photo-139746.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" width={'100%'} height={'100%'} />
            </div>
-           <h6 className='text-center mt-3'>Breakfast Recipes</h6>
-           </button>
+           <h6 className='text-center mt-3'>Breakfast Recipes</h6>          
          </div>
 
-         <div id='parent'>
-          <button onClick={ExploreRecipes} type='button' style={{border:'transparent',color:'black',backgroundColor:'transparent'}}>
+         <div id='parent'>          
            <div id='rounded'>
              <img src="https://images.pexels.com/photos/4969892/pexels-photo-4969892.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""  width={'100%'} height={'100%'}/>
            </div>
-           <h6 className='text-center mt-3'>Brunch Recipes</h6>
-           </button>
+           <h6 className='text-center mt-3'>Brunch Recipes</h6>          
          </div>
 
-         <div id='parent'>
-          <button onClick={ExploreRecipes} type='button' style={{border:'transparent',color:'black',backgroundColor:'transparent'}}>
+         <div id='parent'>         
            <div id='rounded'>
             <img src="https://images.unsplash.com/photo-1616645297079-dfaf44a6f977?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGx1bmNoJTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="" width={'100%'} height={'100%'}/>
             </div>
-            <h6 className='text-center mt-3'>Lunch Recipes</h6>
-            </button>
+            <h6 className='text-center mt-3'>Lunch Recipes</h6>            
          </div>
 
-         <div id='parent'>
-          <button onClick={ExploreRecipes} type='button' style={{border:'transparent',color:'black',backgroundColor:'transparent'}}>
+         <div id='parent5'>         
            <div id='rounded'>
             <img src="https://images.pexels.com/photos/1484678/pexels-photo-1484678.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" width={'100%'} height={'100%'}/>
            </div>
-           <h6 className='text-center mt-3'>Drink Recipes</h6>
-           </button>
+           <h6 className='text-center mt-3'>Drink Recipes</h6>           
          </div>
 
-         <div id='parent'>
-         <button onClick={ExploreRecipes} type='button' style={{border:'transparent',color:'black',backgroundColor:'transparent'}}>
+         <div id='parent5'>         
            <div id='rounded'>
             <img src="https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" width={'100%'} height={'100%'}/>
            </div>
-           <h6 className='text-center mt-3'>Dinner Recipes</h6>
-           </button>
+           <h6 className='text-center mt-3'>Dinner Recipes</h6>          
          </div>
 
       </div>
